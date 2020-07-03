@@ -2,7 +2,7 @@ extends Area2D
 onready var node = get_node("/root/Main_Menu/hud/Score")
 export var velocity = Vector2()
 export var spriteSize = int() 
-
+# test comment
 func _ready():
 #	print(spriteSize)
 	pass
