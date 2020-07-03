@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Animes/lightning/lightning.tres" type="SpriteFrames" id=1]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+position = Vector2( 519.284, 890.772 )
+frames = ExtResource( 1 )
+frame = 10
+playing = true

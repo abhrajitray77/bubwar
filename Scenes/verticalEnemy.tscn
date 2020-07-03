@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Animes/enemy_black/base.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Animes/enemy_black/base 2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Animes/enemy_black/reflec.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Animes/enemy_black/shards.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Animes/enemy_black/verEnemy.tres" type="Animation" id=6]
+[ext_resource path="res://Scripts/verEnemyAnim.gd" type="Script" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="verticalEnemy" instance=ExtResource( 1 )]
+velocity = Vector2( 0, 800 )
+spriteSize = 250
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0.835083, -1.93739 )
+scale = Vector2( 0.228045, 0.228045 )
+z_index = 0
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Sprite" index="0"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Sprite" index="1"]
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="Sprite" index="2"]
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="3"]
+anims/verEnemy = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2( 14.9855, 14.767 )
+shape = SubResource( 1 )

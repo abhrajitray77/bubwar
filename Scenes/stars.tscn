@@ -1,0 +1,52 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Animes/stars/stars_modulator.tres" type="Animation" id=1]
+[ext_resource path="res://Assets/Animes/stars/starfield_0002_base-star-layer.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/parallax.gd" type="Script" id=3]
+[ext_resource path="res://Assets/sprites/menuBg/blue sky.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Animes/stars/starfield_0001_top-star-layer.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Stars_modu.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/color_changer.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Animes/menu_bg_scroll/bg_colour4.tres" type="Animation" id=8]
+[ext_resource path="res://Assets/Animes/menu_bg_scroll/bg_colour1.tres" type="Animation" id=9]
+[ext_resource path="res://Assets/Animes/menu_bg_scroll/bg_colour2.tres" type="Animation" id=10]
+[ext_resource path="res://Assets/Animes/menu_bg_scroll/bg_colour3.tres" type="Animation" id=11]
+
+[node name="parallax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enable = true
+script = ExtResource( 3 )
+
+[node name="Blue_sky" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( -678.12, -1053.28 )
+scale = Vector2( 2.13577, 1.72859 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 0, 1920 )
+
+[node name="Base_stars" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+self_modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 0, 1827 )
+
+[node name="top_star" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Stars_modu" type="AnimationPlayer" parent="."]
+anims/stars_modulator = ExtResource( 1 )
+script = ExtResource( 6 )
+
+[node name="sky_color" type="AnimationPlayer" parent="."]
+anims/bg_colour1 = ExtResource( 9 )
+anims/bg_colour2 = ExtResource( 10 )
+anims/bg_colour3 = ExtResource( 11 )
+anims/bg_colour4 = ExtResource( 8 )
+script = ExtResource( 7 )

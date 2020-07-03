@@ -1,0 +1,30 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=6 format=2]
+
+[sub_resource type="AnimationNodeAdd2" id=1]
+filter_enabled = true
+filters = [ ".:rotation_degrees", "2nd_lay:position", "2nd_lay:rotation_degrees", "2nd_lay:scale" ]
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "bubble_inside"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Bubble_rotate"
+
+[sub_resource type="AnimationNodeTimeScale" id=4]
+
+[sub_resource type="AnimationNodeBlendTree" id=5]
+graph_offset = Vector2( -516, -63.75 )
+nodes/Add2/node = SubResource( 1 )
+nodes/Add2/position = Vector2( 80, 140 )
+nodes/Animation/node = SubResource( 3 )
+nodes/Animation/position = Vector2( -280, 80 )
+"nodes/Animation 2/node" = SubResource( 2 )
+"nodes/Animation 2/position" = Vector2( -180, 220 )
+nodes/TimeScale/node = SubResource( 4 )
+nodes/TimeScale/position = Vector2( 300, 160 )
+nodes/output/position = Vector2( 560, 140 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Add2", "Add2", 0, "Animation", "Add2", 1, "Animation 2" ]
+
+[resource]
+states/BlendTree2/node = SubResource( 5 )
+states/BlendTree2/position = Vector2( 523, 111 )

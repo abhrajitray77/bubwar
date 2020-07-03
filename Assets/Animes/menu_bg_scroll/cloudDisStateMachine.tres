@@ -1,0 +1,14 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=3 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "clouds_modu"
+
+[sub_resource type="AnimationNodeBlendTree" id=2]
+nodes/Animation/node = SubResource( 1 )
+nodes/Animation/position = Vector2( 424, 68 )
+nodes/output/position = Vector2( 780, 60 )
+node_connections = [ "output", 0, "Animation" ]
+
+[resource]
+states/modulator/node = SubResource( 2 )
+states/modulator/position = Vector2( 602, 76 )

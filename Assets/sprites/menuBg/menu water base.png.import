@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/menu water base.png-42f95e3b27d1e4ad82b3ab4e5dc37a72.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/sprites/menuBg/menu water base.png"
+dest_files=[ "res://.import/menu water base.png-42f95e3b27d1e4ad82b3ab4e5dc37a72.stex" ]
+
+[params]
+
+compress/mode=1
+compress/lossy_quality=0.34
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

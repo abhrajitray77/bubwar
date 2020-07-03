@@ -1,0 +1,17 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "bubble_wiggle"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 0.7, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1.07177, 0.965937, 1.03527, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.469394, 0.469394 ), Vector2( 0.461466, 0.414602 ), Vector2( 0.392601, 0.469394 ), Vector2( 0.461466, 0.469394 ), Vector2( 0.392601, 0.469394 ), Vector2( 0.461466, 0.414602 ), Vector2( 0.461466, 0.469394 ) ]
+}

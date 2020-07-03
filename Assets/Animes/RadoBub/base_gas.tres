@@ -1,0 +1,54 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "base_gas"
+length = 7.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("gas inner:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.9, 2.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 0.378929, 1, 39.3966 ),
+"update": 0,
+"values": [ Vector2( 0.21826, 0.21826 ), Vector2( 0.388543, 0.388543 ), Vector2( 0.21826, 0.21826 ), Vector2( 0.504668, 0.504668 ), Vector2( 0.21826, 0.21826 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("gas outer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.9, 2.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 0.378929, 1, 64 ),
+"update": 0,
+"values": [ Vector2( 0.1079, 0.105953 ), Vector2( 0.384094, 0.377164 ), Vector2( 0.206736, 0.203006 ), Vector2( 0.513941, 0.504668 ), Vector2( 0.1079, 0.105953 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("gas inner:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 45.2548 ),
+"update": 0,
+"values": [ 0.0, 105.613, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("gas outer:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 78.7932 ),
+"update": 0,
+"values": [ 0.0, -118.668, 0.0 ]
+}

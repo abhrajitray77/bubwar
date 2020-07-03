@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/diagonalEnemy.gd" type="Script" id=2]
+[ext_resource path="res://Assets/sprites/bubble blue low res.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Enemy" instance=ExtResource( 1 )]
+position = Vector2( 521.804, 167.723 )
+script = ExtResource( 2 )
+velocity = Vector2( 500, 300 )
+spriteSize = 150
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2( 12.8259, 12.8259 )
+shape = SubResource( 1 )

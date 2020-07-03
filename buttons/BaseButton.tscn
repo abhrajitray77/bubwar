@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://buttons/BaseButton.gd" type="Script" id=1]
+
+[node name="TextureButton" type="TextureButton"]
+anchor_left = 0.017
+anchor_top = 0.01
+anchor_right = 0.108
+anchor_bottom = 0.061
+margin_left = 0.0119476
+margin_top = 0.842113
+margin_right = -0.268051
+margin_bottom = -0.0778961
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="." to="." method="_on_TextureButton_button_up"]

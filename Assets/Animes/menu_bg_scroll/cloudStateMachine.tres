@@ -1,0 +1,45 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=10 format=2]
+
+[sub_resource type="AnimationNodeAdd2" id=1]
+
+[sub_resource type="AnimationNodeAdd2" id=2]
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "clouds_bg"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "clouds__fg2"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "clouds_foreground"
+
+[sub_resource type="AnimationNodeTimeScale" id=6]
+
+[sub_resource type="AnimationNodeTimeScale" id=7]
+
+[sub_resource type="AnimationNodeTimeScale" id=8]
+
+[sub_resource type="AnimationNodeBlendTree" id=9]
+graph_offset = Vector2( -682, -80.5 )
+nodes/Add2/node = SubResource( 2 )
+nodes/Add2/position = Vector2( 180, 0 )
+"nodes/Add2 2/node" = SubResource( 1 )
+"nodes/Add2 2/position" = Vector2( 20, 200 )
+nodes/Animation/node = SubResource( 5 )
+nodes/Animation/position = Vector2( -460, 0 )
+"nodes/Animation 2/node" = SubResource( 3 )
+"nodes/Animation 2/position" = Vector2( -500, 260 )
+"nodes/Animation 3/node" = SubResource( 4 )
+"nodes/Animation 3/position" = Vector2( -400, 120 )
+nodes/TimeScale/node = SubResource( 8 )
+nodes/TimeScale/position = Vector2( -200, 340 )
+"nodes/TimeScale 2/node" = SubResource( 6 )
+"nodes/TimeScale 2/position" = Vector2( -160, 148.25 )
+"nodes/TimeScale 3/node" = SubResource( 7 )
+"nodes/TimeScale 3/position" = Vector2( -80, -20 )
+nodes/output/position = Vector2( 500, 40 )
+node_connections = [ "output", 0, "Add2", "TimeScale", 0, "Animation 2", "Add2", 0, "TimeScale 3", "Add2", 1, "Add2 2", "Add2 2", 0, "TimeScale 2", "Add2 2", 1, "TimeScale", "TimeScale 3", 0, "Animation", "TimeScale 2", 0, "Animation 3" ]
+
+[resource]
+states/Clouds/node = SubResource( 9 )
+states/Clouds/position = Vector2( 518, 105 )
