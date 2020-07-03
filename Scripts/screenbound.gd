@@ -14,7 +14,6 @@ func _ready():
 	ProjectSettings.get_setting("display/window/size/height")
 	ProjectSettings.set("display/window/size/width", screen.x)
 	ProjectSettings.set("display/window/size/height", screen.y)
-	print("ready", ProjectSettings.get_setting("display/window/size/width"), ProjectSettings.get_setting("display/window/size/height"))
 
 func _process(_delta):
 	if  ProjectSettings.get_setting("display/window/size/width")== 1080 and ProjectSettings.get_setting("display/window/size/height") == 2220:
@@ -29,5 +28,6 @@ func _process(_delta):
 	if node2.played == true:
 		if anim_played == 1:
 			$Pause_menu/InGameButtons/Button_Mod.play("Button_modu")
+			$hud/healthBubble/AnimationPlayer.play("healthModu")
 			anim_played = 2
 	#print(viewpos)

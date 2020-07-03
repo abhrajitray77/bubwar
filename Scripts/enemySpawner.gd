@@ -29,7 +29,7 @@ func _on_Timer_timeout():
 	verenemy.position = pos
 	$Container.add_child(verenemy)
 	# Set timer again
-	$Timer.wait_time = rand_range(0.5, 0.7)
+	$Timer.wait_time = rand_range(1.5, 3.0)
 	$Timer.start()
 #to instantiate the diagonal enemy first i need a score count
 	if node.score_val > rand_range(50.0, 100.0):
@@ -40,7 +40,7 @@ func _on_Timer_timeout():
 		diaEnemy.position = pos2
 		$Container.add_child(diaEnemy)
 		# Set timer again
-		$Timer.wait_time = rand_range(1.0, 3.0)
+		$Timer.wait_time = rand_range(2.0, 5.0)
 		$Timer.start()
 #RadioActiveEnemy
 	if node.score_val > rand_range(900.0, 1000.0):
@@ -51,5 +51,5 @@ func _on_Timer_timeout():
 		radEnemy.position = pos2
 		$Container.add_child(radEnemy)
 		# Set timer again
-		$Timer.wait_time = rand_range(1.0, 3.0)
+		$Timer.wait_time = rand_range(2.0, 5.0)
 		$Timer.start()

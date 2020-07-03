@@ -4,18 +4,18 @@
 [ext_resource path="res://Assets/Animes/RadoBub/top green.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Animes/RadoBub/base_gas.tres" type="Animation" id=3]
 [ext_resource path="res://Assets/Animes/RadoBub/spin.tres" type="Animation" id=4]
-[ext_resource path="res://Scenes/Gas.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Animes/RadoBub/Gas.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Animes/RadoBub/gas outer.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Animes/RadoBub/gas inner.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/RadioEnemy.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/RadioEnemy.gd" type="Script" id=10]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 13
 load_path = "res://.import/base bubble.png-19521e78cbe88cd732c92fd70d220f2b.stex"
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=2]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
 resource_name = "collider"
 length = 7.0
 loop = true
@@ -32,24 +32,24 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 16.0986, 16.0986 ), Vector2( 10.2484, 10.2484 ), Vector2( 23.5649, 23.5649 ), Vector2( 10.7077, 10.7077 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=2]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "base_gas"
 
-[sub_resource type="AnimationNodeTimeScale" id=3]
+[sub_resource type="AnimationNodeTimeScale" id=5]
 
-[sub_resource type="AnimationNodeBlendTree" id=4]
-nodes/Animation/node = SubResource( 2 )
+[sub_resource type="AnimationNodeBlendTree" id=6]
+nodes/Animation/node = SubResource( 4 )
 nodes/Animation/position = Vector2( 142, 75 )
-nodes/TimeScale/node = SubResource( 3 )
+nodes/TimeScale/node = SubResource( 5 )
 nodes/TimeScale/position = Vector2( 400, 40 )
 nodes/output/position = Vector2( 600, 60 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachine" id=5]
-states/Gas/node = SubResource( 4 )
+[sub_resource type="AnimationNodeStateMachine" id=7]
+states/Gas/node = SubResource( 6 )
 states/Gas/position = Vector2( 364, 101 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 
 [node name="RadioEnemy" instance=ExtResource( 1 )]
 position = Vector2( 574.078, 302.003 )
@@ -59,6 +59,7 @@ spriteSize = 250
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.258302, 0.258302 )
+z_index = 4
 texture = SubResource( 1 )
 
 [node name="top_green" type="Sprite" parent="Sprite" index="0"]
@@ -70,13 +71,14 @@ anims/base_gas = ExtResource( 3 )
 anims/spin = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="Collider" type="AnimationPlayer" parent="CollisionShape2D" index="0"]
 playback_speed = 0.4
-anims/collider = SubResource( 8 )
+anims/collider = SubResource( 3 )
 
 [node name="Gases" type="Node2D" parent="." index="2"]
+z_index = 3
 
 [node name="gas inner" type="Sprite" parent="Gases" index="0"]
 scale = Vector2( 0.21826, 0.21826 )
@@ -90,8 +92,8 @@ texture = ExtResource( 6 )
 anims/base_gas = ExtResource( 3 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Gases" index="3"]
-tree_root = SubResource( 5 )
+tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 6 )
+parameters/playback = SubResource( 8 )
 parameters/Gas/TimeScale/scale = 0.4
 script = ExtResource( 5 )

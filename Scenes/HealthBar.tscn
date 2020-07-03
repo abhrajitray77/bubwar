@@ -1,0 +1,16 @@
+[gd_scene format=2]
+
+[node name="HealthBar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifeBar" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 18.1822, 3.17223 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -49,3 +49,7 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

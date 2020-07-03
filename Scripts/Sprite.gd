@@ -1,5 +1,5 @@
 extends Sprite
-
+onready var node2 = get_node("/root/Main_Menu/hud/Score")
 onready var played = false
 func _ready():
 	pass
@@ -9,3 +9,4 @@ func _input(event):
 		if get_rect().has_point(to_local(event.position)):
 			played = true
 			$AnimationPlayer.play("bubble_wiggle")
+			node2.timer.start()

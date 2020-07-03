@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/sprites/healthBubble/healthBubble.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprites/healthBubble/healthModu.tres" type="Animation" id=2]
+[ext_resource path="res://Scripts/healthBubble.gd" type="Script" id=3]
+
+[node name="healthBubble" type="Node2D"]
+modulate = Color( 1, 1, 1, 0 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 117.173, 0.0131226 )
+scale = Vector2( 0.488398, 0.488398 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="Sprite2" type="Sprite" parent="Sprite"]
+position = Vector2( 166.105, -0.000488281 )
+scale = Vector2( 1.01472, 0.999998 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( -36.4844, 0.0132446 )
+scale = Vector2( 0.488398, 0.488398 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="Sprite3" type="Sprite" parent="Sprite4"]
+position = Vector2( 166.105, -0.000488281 )
+scale = Vector2( 1.01472, 0.999998 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( -186.801, 0.0131226 )
+scale = Vector2( 0.488398, 0.488398 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="Sprite6" type="Sprite" parent="Sprite5"]
+position = Vector2( 166.105, -0.000488281 )
+scale = Vector2( 1.01472, 0.999998 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/healthModu = ExtResource( 2 )

@@ -11,7 +11,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="verticalEnemy" instance=ExtResource( 1 )]
-velocity = Vector2( 0, 800 )
+velocity = Vector2( 0, 1000 )
 spriteSize = 250
 
 [node name="Sprite" parent="." index="0"]
