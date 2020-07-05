@@ -1,5 +1,5 @@
 extends Node2D
-
+onready var node2 = get_node("/root/Main_Menu/hud/PowerupDisplay")
 #onready var node = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/basicDamageAnim")
 var count = 0
 func _ready():
@@ -18,3 +18,12 @@ func _process(delta):
 		$Sprite5/Sprite6.hide()
 	if count == 6:
 		$Sprite5.hide()
+	if node2.health == true:
+		$Sprite.show()
+		$Sprite4.show()
+		$Sprite5.show()
+		$Sprite/Sprite2.show()
+		$Sprite4/Sprite3.show()
+		$Sprite5/Sprite6.show()
+		node2.health = false
+		count = 0

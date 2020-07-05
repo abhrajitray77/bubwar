@@ -2,6 +2,7 @@ extends AnimatedSprite
 
 onready var node2 = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/TouchScreenButton")
 onready var node = get_node("/root/Main_Menu/hud/PowerupDisplay")
+onready var node3 = get_node("/root/Main_Menu/PowSpawner")
 var powAnim = false
 func _ready():
 	self.hide()
@@ -13,7 +14,7 @@ func _process(delta):
 			if powAnim == false:
 				self.show()
 				$Area2D/CollisionShape2D.disabled = false
-				$Timer.wait_time = 10
+				$Timer.wait_time = 15
 				$Timer.start()
 				playing = true
 				powAnim = true
@@ -27,3 +28,4 @@ func _on_Timer_timeout():
 	node.lightning = false
 	$Area2D/CollisionShape2D.disabled = true
 	self.hide()
+	node3.powActive = false
