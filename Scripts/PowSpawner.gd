@@ -8,20 +8,34 @@ onready var timer_started = false
 var powActive = false
 
 func _ready():
-# warning-ignore:return_value_discarded
-	$Timer.connect("timeout", self, "_on_Timer_timeout")
 	pass
+	
 
 func _process(_delta):
 	# Set timer
 	if timer_started == false:
 		if node2.played == true:
-			$Timer.wait_time = rand_range(1.0, 3.0)
-			$Timer.start()
+			$lightTimer.wait_time = rand_range(1.0, 3.0)
+			$lightTimer.start()
+			$shTimer.wait_time = rand_range(10.0, 15.0)
+			$shTimer.start()
 			timer_started = true
-	pass
- 
-func _on_Timer_timeout():
+
+func _on_lightTimer_timeout():
+	#lightningPowerup
+	if powActive == false:
+		randomize()
+		var LiPow = LPow.instance()
+		var Lpos = Vector2()
+		Lpos.x = rand_range(LiPow.spriteSize - 150, get_viewport().get_visible_rect().size.x - LiPow.spriteSize + 50)
+		Lpos.y = 0 - LiPow.spriteSize - 400
+		LiPow.position = Lpos
+		$Container.add_child(LiPow)
+		# Set timer again
+		$lightTimer.wait_time = rand_range(20.0, 25.0)
+		$lightTimer.start()
+
+func _on_shTimer_timeout():
 	if powActive == false:
 		randomize()
 		var shield = ShPow.instance()
@@ -31,15 +45,5 @@ func _on_Timer_timeout():
 		shield.position = pos
 		$Container.add_child(shield)
 		# Set timer again
-		$Timer.wait_time = rand_range(1.0, 5.0)
-		$Timer.start()
-	#lightningPowerup
-		var LiPow = LPow.instance()
-		var Lpos = Vector2()
-		Lpos.x = rand_range(LiPow.spriteSize - 150, get_viewport().get_visible_rect().size.x - LiPow.spriteSize + 50)
-		Lpos.y = 0 - LiPow.spriteSize - 400
-		LiPow.position = Lpos
-		$Container.add_child(LiPow)
-		# Set timer again
-		$Timer.wait_time = rand_range(1.0, 5.0)
-		$Timer.start()
+		$shTimer.wait_time = rand_range(10.0, 15.0)
+		$shTimer.start()

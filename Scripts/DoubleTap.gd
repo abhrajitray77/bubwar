@@ -1,6 +1,8 @@
 extends TouchScreenButton
 
 onready var node2 = preload("res://Scenes/Doubletap.tscn")
+onready var node = get_node("/root/Main_Menu/PowSpawner")
+var powUsed = false
 
 signal double_tap
 
@@ -41,5 +43,7 @@ func _timer_timeout():
 
 func _on_TouchScreenButton_double_tap():
 	print("tapped")
-	get_parent().get_node("AnimatedSprite").play()
-	get_parent().get_node("AnimatedSprite").set_frame(0)
+	#get_parent().get_node("AnimatedSprite").play()
+	#get_parent().get_node("AnimatedSprite").set_frame(0)
+	if node.powActive == true:
+		powUsed = true

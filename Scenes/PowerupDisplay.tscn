@@ -30,4 +30,8 @@ texture = ExtResource( 5 )
 [node name="Health" type="Sprite" parent="powerups"]
 texture = ExtResource( 4 )
 
+[node name="Tween" type="Tween" parent="powerups"]
+repeat = true
+playback/repeat = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

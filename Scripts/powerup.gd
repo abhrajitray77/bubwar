@@ -17,5 +17,5 @@ func _process(delta):
 func _on_Powerup_body_entered(body: KinematicBody2D):
 	# test
 	queue_free()
-	#node2.shield = true
+	node2.shield = true
 	
