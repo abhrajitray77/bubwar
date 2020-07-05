@@ -21,6 +21,6 @@ func _process(delta):
 func _on_Timer_timeout():
 	score_val = score_val + 5
 	if score_val >= rand_range(100.0, 200.0):
-		timer.wait_time = timer.wait_time - 0.1 
+		timer.wait_time = 0.8
 	if score_val >= rand_range(400.0, 600.0):
-		timer.wait_time = timer.wait_time - 0.1
+		timer.wait_time = timer.wait_time - 0.7

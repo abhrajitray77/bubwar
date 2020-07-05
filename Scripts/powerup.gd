@@ -1,5 +1,6 @@
 extends Area2D
 onready var node = get_node("/root/Main_Menu/hud/Score")
+onready var node2 = get_node("/root/Main_Menu/hud/PowerupDisplay")
 export var velocity = Vector2()
 export var spriteSize = int() 
 
@@ -16,3 +17,5 @@ func _process(delta):
 func _on_Powerup_body_entered(body: KinematicBody2D):
 	# test
 	queue_free()
+	#node2.shield = true
+	

@@ -1,22 +1,24 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Powerup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/powerups/lightning_final.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/LightPowerup.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="Powerup" instance=ExtResource( 1 )]
+[node name="Powerup" type="Area2D"]
 position = Vector2( 523.726, 159.153 )
 scale = Vector2( 0.907819, 0.907819 )
-velocity = Vector2( 0, 400 )
-spriteSize = 300
+script = ExtResource( 3 )
+velocity = Vector2( 0, 300 )
+spriteSize = 200
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -3.51615, -3.51617 )
 scale = Vector2( 0.490154, 0.490154 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -8.16229, -1.36037 )
 scale = Vector2( 7.48217, 7.48217 )
 shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Powerup_body_entered"]

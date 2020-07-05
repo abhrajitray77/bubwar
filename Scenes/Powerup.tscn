@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scripts/powerup.gd" type="Script" id=1]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="Powerup" type="Area2D"]
