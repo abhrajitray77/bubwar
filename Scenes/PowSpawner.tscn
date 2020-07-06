@@ -12,6 +12,9 @@ script = ExtResource( 1 )
 [node name="shTimer" type="Timer" parent="."]
 
 [node name="healthTimer" type="Timer" parent="."]
+
+[node name="speedTimer" type="Timer" parent="."]
 [connection signal="timeout" from="lightTimer" to="." method="_on_lightTimer_timeout"]
 [connection signal="timeout" from="shTimer" to="." method="_on_shTimer_timeout"]
 [connection signal="timeout" from="healthTimer" to="." method="_on_healthTimer_timeout"]
+[connection signal="timeout" from="speedTimer" to="." method="_on_speedTimer_timeout"]

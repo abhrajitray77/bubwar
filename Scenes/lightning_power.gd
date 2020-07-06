@@ -8,7 +8,7 @@ func _ready():
 	self.hide()
 	$Area2D/CollisionShape2D.disabled = true
 
-func _process(delta):
+func _process(_delta):
 	if node2.powUsed == true:
 		if node.lightning == true:
 			if powAnim == false:
@@ -29,3 +29,5 @@ func _on_Timer_timeout():
 	$Area2D/CollisionShape2D.disabled = true
 	self.hide()
 	node3.powActive = false
+	powAnim = false
+	playing = false

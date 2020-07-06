@@ -4,7 +4,7 @@ func _ready():
 	velocity.x = rand_range(velocity.x, -velocity.x)
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if get_position().x <= 0+spriteSize:
 		velocity.x = abs(velocity.x)
 	if get_position().x >= get_viewport_rect().size.x - spriteSize:

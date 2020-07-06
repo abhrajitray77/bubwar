@@ -7,7 +7,7 @@ func _ready():
 #	var touch = movement.instance()
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if anim == true:
 		$AnimatedSprite.play()
 		$AnimatedSprite.set_frame(0)

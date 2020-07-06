@@ -6,7 +6,7 @@ func _ready():
 	velocity.x = rand_range(velocity.x, -velocity.x)
 	$Sprite/BaseBubble.play("spin")
 
-func _process(delta):
+func _process(_delta):
 	if anim_played == 1:
 		$CollisionShape2D/Collider.play("collider")
 		anim_played = 2

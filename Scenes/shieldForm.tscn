@@ -1,24 +1,22 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Animes/lightning/lightning.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://Scenes/lightning_power.gd" type="Script" id=2]
+[ext_resource path="res://Assets/sprites/powerups/shield_form.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/shieldForm.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="AnimatedSprite" type="AnimatedSprite"]
-position = Vector2( 519.284, 890.772 )
-frames = ExtResource( 1 )
-frame = 10
+[node name="shield" type="Sprite"]
+position = Vector2( 543.406, 874.883 )
+scale = Vector2( 1.61001, 1.61001 )
+texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-scale = Vector2( 29.1074, 29.1074 )
+scale = Vector2( 20.0894, 20.0894 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

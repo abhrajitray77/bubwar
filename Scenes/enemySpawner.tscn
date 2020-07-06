@@ -7,4 +7,11 @@ script = ExtResource( 1 )
 
 [node name="Container" type="Node" parent="."]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="radEnemy" type="Timer" parent="."]
+
+[node name="rockEnemy" type="Timer" parent="."]
+
+[node name="spinEnemy" type="Timer" parent="."]
+[connection signal="timeout" from="radEnemy" to="." method="_on_radEnemy_timeout"]
+[connection signal="timeout" from="rockEnemy" to="." method="_on_rockEnemy_timeout"]
+[connection signal="timeout" from="spinEnemy" to="." method="_on_spinEnemy_timeout"]

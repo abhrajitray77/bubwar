@@ -15,7 +15,7 @@ func _process(delta):
 		queue_free()
 
 
-func _on_Enemy_body_entered(body: KinematicBody2D):
+func _on_Enemy_body_entered(_body: KinematicBody2D):
 	node2.play = true
 	node3.count += 1 
 	queue_free()

@@ -11,7 +11,7 @@ func _ready():
 	$darken_bg.hide()
 	$"Pause menu bg/pause_blue".hide()
 	
-func _process(delta):
+func _process(_delta):
 	if node2.score_val > rand_range(800.0, 1000.0):
 		$"Pause menu bg/pause_blue".show()
 	if press_tog == true:

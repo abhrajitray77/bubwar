@@ -7,7 +7,7 @@ var anim_started = false
 func _ready():
 	playback = get("parameters/playback")
 	active = true
-func _process(delta):
+func _process(_delta):
 	if anim_started == false:
 		if node2.played == true:
 			playback.start("BlendTree2")

@@ -21,6 +21,8 @@ func _process(_delta):
 		clamp_val_y_min = 10
 		clamp_val_y_max = 300
 		node.position.y = 1050
+		$hud/healthBubble.position.y = 2100
+		$hud/PowerupDisplay.position.y = 300
 	viewpos = $Player_stuff/PLayer/Player.position
 	viewpos.x = clamp(viewpos.x, clamp_val_x, screen.x -clamp_val_x)
 	viewpos.y = clamp(viewpos.y, clamp_val_y_min, screen.y -clamp_val_y_max)

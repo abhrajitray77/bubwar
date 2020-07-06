@@ -3,6 +3,7 @@ extends Node2D
 const ShPow = preload("res://Scenes/shield.tscn")
 const LPow  = preload("res://Scenes/LightPowerup.tscn")
 const hPow = preload("res://Scenes/healthPow.tscn")
+const sPow = preload("res://Scenes/speedbBoost.tscn")
 onready var node = get_node("/root/Main_Menu/hud/Score")
 onready var node2 = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/main_bg")
 onready var timer_started = false
@@ -22,6 +23,8 @@ func _process(_delta):
 			$shTimer.start()
 			$healthTimer.wait_time = rand_range(12.0 , 14.0)
 			$healthTimer.start()
+			$speedTimer.wait_time = rand_range(15.0, 20.0)
+			$speedTimer.start()
 			timer_started = true
 
 func _on_lightTimer_timeout():
@@ -64,4 +67,16 @@ func _on_healthTimer_timeout():
 		# Set timer again
 		$healthTimer.wait_time = rand_range(12.0, 17.0)
 		$healthTimer.start()
-	
+
+func _on_speedTimer_timeout():
+	if powActive == false:
+		randomize()
+		var speedPow = sPow.instance()
+		var spos   = Vector2()
+		spos.x = rand_range(speedPow.spriteSize - 150, get_viewport().get_visible_rect().size.x - speedPow.spriteSize + 50)
+		spos.y = 0 - speedPow.spriteSize - 300
+		speedPow.position = spos
+		$Container.add_child(speedPow)
+		# Set timer again
+		$speedTimer.wait_time = rand_range(15.0, 20.0)
+		$speedTimer.start()

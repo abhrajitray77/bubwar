@@ -7,7 +7,7 @@ var anim_started = 1
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if node.score_val == 0:
 		if node2.played == true:
 			if anim_started == 1:

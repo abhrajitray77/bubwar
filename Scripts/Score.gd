@@ -10,7 +10,7 @@ func _ready():
 	#$Score_bar/score_tex.get("custom_fonts/font").set_size(100)
 	#rint(font_size.size)
 	pass
-func _process(delta):
+func _process(_delta):
 	$Score_bar/score_tex.set_text(str(score_val, " m"))
 	if len(str(score_val)) - len(str(prev_score_val)):
 		if font_size.size > 50:

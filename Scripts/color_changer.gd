@@ -6,7 +6,7 @@ var anim_played = 1
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if anim_played == 1:
 		if node.score_val > rand_range(200.0, 300.0):
 			play("bg_colour1")

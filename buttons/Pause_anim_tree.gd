@@ -1,6 +1,4 @@
 extends AnimationTree
-
-onready var node = get_node("/root/Main_Menu/Pause_menu/InGameButtons")
 var playback = AnimationNodeStateMachinePlayback
 var anim_started = 1
 
