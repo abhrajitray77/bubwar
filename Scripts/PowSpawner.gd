@@ -4,6 +4,7 @@ const ShPow = preload("res://Scenes/shield.tscn")
 const LPow  = preload("res://Scenes/LightPowerup.tscn")
 const hPow = preload("res://Scenes/healthPow.tscn")
 const sPow = preload("res://Scenes/speedbBoost.tscn")
+const co = preload("res://Scenes/coins.tscn")
 onready var node = get_node("/root/Main_Menu/hud/Score")
 onready var node2 = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/main_bg")
 onready var timer_started = false
@@ -25,6 +26,8 @@ func _process(_delta):
 			$healthTimer.start()
 			$speedTimer.wait_time = rand_range(15.0, 20.0)
 			$speedTimer.start()
+			$coinTimer.wait_time = rand_range(4.0, 8.0)
+			$coinTimer.start()
 			timer_started = true
 
 func _on_lightTimer_timeout():
@@ -56,17 +59,16 @@ func _on_shTimer_timeout():
 
 
 func _on_healthTimer_timeout():
-	if powActive == false:
-		randomize()
-		var heaPow = hPow.instance()
-		var hpos   = Vector2()
-		hpos.x = rand_range(heaPow.spriteSize - 150, get_viewport().get_visible_rect().size.x - heaPow.spriteSize + 50)
-		hpos.y = 0 - heaPow.spriteSize - 300
-		heaPow.position = hpos
-		$Container.add_child(heaPow)
-		# Set timer again
-		$healthTimer.wait_time = rand_range(12.0, 17.0)
-		$healthTimer.start()
+	randomize()
+	var heaPow = hPow.instance()
+	var hpos   = Vector2()
+	hpos.x = rand_range(heaPow.spriteSize - 150, get_viewport().get_visible_rect().size.x - heaPow.spriteSize + 50)
+	hpos.y = 0 - heaPow.spriteSize - 300
+	heaPow.position = hpos
+	$Container.add_child(heaPow)
+	# Set timer again
+	$healthTimer.wait_time = rand_range(12.0, 17.0)
+	$healthTimer.start()
 
 func _on_speedTimer_timeout():
 	if powActive == false:
@@ -80,3 +82,26 @@ func _on_speedTimer_timeout():
 		# Set timer again
 		$speedTimer.wait_time = rand_range(15.0, 20.0)
 		$speedTimer.start()
+
+
+func _on_coinTimer_timeout():
+	randomize()
+	var coin = co.instance()
+	var coinpos   = Vector2()
+	coinpos.x = rand_range(coin.spriteSize - 150, get_viewport().get_visible_rect().size.x - coin.spriteSize + 50)
+	coinpos.y = 0 - coin.spriteSize - 300
+	coin.position = coinpos
+	$Container.add_child(coin)
+	# Set timer again
+	$coinTimer.wait_time = rand_range(2.0, 4.0)
+	$coinTimer.start()
+	randomize()
+	var coin2 = co.instance()
+	var coin2pos   = Vector2()
+	coin2pos.x = rand_range(coin2.spriteSize - 150, get_viewport().get_visible_rect().size.x - coin2.spriteSize + 50)
+	coin2pos.y = 0 - coin2.spriteSize - 300
+	coin2.position = coin2pos
+	$Container.add_child(coin2)
+	# Set timer again
+	$coinTimer.wait_time = rand_range(2.0, 4.0)
+	$coinTimer.start()

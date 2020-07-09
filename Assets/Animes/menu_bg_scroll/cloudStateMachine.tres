@@ -38,7 +38,7 @@ nodes/TimeScale/position = Vector2( -200, 340 )
 "nodes/TimeScale 3/node" = SubResource( 7 )
 "nodes/TimeScale 3/position" = Vector2( -80, -20 )
 nodes/output/position = Vector2( 500, 40 )
-node_connections = [ "output", 0, "Add2", "TimeScale 3", 0, "Animation", "TimeScale 2", 0, "Animation 3", "Add2 2", 0, "TimeScale 2", "Add2 2", 1, "TimeScale", "TimeScale", 0, "Animation 2", "Add2", 0, "TimeScale 3", "Add2", 1, "Add2 2" ]
+node_connections = [ "output", 0, "Add2", "TimeScale", 0, "Animation 2", "Add2", 0, "TimeScale 3", "Add2", 1, "Add2 2", "TimeScale 3", 0, "Animation", "Add2 2", 0, "TimeScale 2", "Add2 2", 1, "TimeScale", "TimeScale 2", 0, "Animation 3" ]
 
 [resource]
 states/Clouds/node = SubResource( 9 )

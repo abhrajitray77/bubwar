@@ -16,3 +16,8 @@ func _on_Powerup_body_entered(_body: KinematicBody2D):
 	# test
 	queue_free()
 	node2.health = true
+
+
+func _on_Powerup_area_entered(area):
+	queue_free()
+	node2.health = true

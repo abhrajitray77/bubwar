@@ -42,8 +42,5 @@ func _timer_timeout():
 
 
 func _on_TouchScreenButton_double_tap():
-	print("tapped")
-	#get_parent().get_node("AnimatedSprite").play()
-	#get_parent().get_node("AnimatedSprite").set_frame(0)
 	if node.powActive == true:
 		powUsed = true

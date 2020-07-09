@@ -31,5 +31,7 @@ func _process(_delta):
 		if anim_played == 1:
 			$Pause_menu/InGameButtons/Button_Mod.play("Button_modu")
 			$hud/healthBubble/AnimationPlayer.play("healthModu")
+			$hud/Score/AnimationPlayer.play("score_mod")
+			$hud/coinsCounter/AnimationPlayer.play("coin_count_mod")
 			anim_played = 2
 	#print(viewpos)
