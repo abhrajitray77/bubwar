@@ -1,5 +1,6 @@
 extends Area2D
 onready var node2 = get_node("/root/Main_Menu/hud/PowerupDisplay")
+onready var node3 = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/shield")
 export var velocity = Vector2()
 export var spriteSize = int() 
 

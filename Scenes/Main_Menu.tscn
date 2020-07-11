@@ -82,6 +82,7 @@ anims/const_move = ExtResource( 15 )
 script = ExtResource( 12 )
 
 [node name="PowSpawner" parent="." instance=ExtResource( 16 )]
+z_index = 10
 
 [node name="Pause_menu" type="CanvasLayer" parent="."]
 pause_mode = 2

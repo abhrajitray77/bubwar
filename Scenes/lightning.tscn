@@ -12,15 +12,13 @@ frame = 10
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 39
+collision_mask = 39
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 scale = Vector2( 29.1074, 29.1074 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -31,3 +31,7 @@ func _on_Timer_timeout():
 	executed = false
 	node4.modulate = Color(1,1,1,1)
 	$AnimationPlayer2.stop()
+
+
+func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
+	pass # Replace with function body.

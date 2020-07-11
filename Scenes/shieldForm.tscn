@@ -12,8 +12,8 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 39
+collision_mask = 39
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 20.0894, 20.0894 )
@@ -21,4 +21,5 @@ shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
