@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5, 3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 96.0444, 98.542 ), Vector2( 75.478, 28.8818 ), Vector2( 102.678, -12.251 ) ]
+"values": [ Vector2( 96.0444, 98.542 ), Vector2( 75.478, 28.8818 ), Vector2( 65.1389, -55.1221 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("health:self_modulate")
@@ -38,7 +38,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1.3, 3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 157.007, 106.866 ), Vector2( 180.226, 50.4736 ), Vector2( 180.89, 3.37207 ) ]
+"values": [ Vector2( 157.007, 106.866 ), Vector2( 180.226, 50.4736 ), Vector2( 204.898, -37.3188 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("speedBoost:self_modulate")
@@ -59,10 +59,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 1.3, 3 ),
+"times": PoolRealArray( 0, 2, 3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 122.216, 103.059 ), Vector2( 124.788, 49.043 ), Vector2( 96.1333, 2.51953 ) ]
+"values": [ Vector2( 122.216, 103.059 ), Vector2( 124.788, 49.043 ), Vector2( 113.687, 9.18799 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("lightning_final:self_modulate")
@@ -71,7 +71,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 2.2, 3 ),
+"times": PoolRealArray( 0, 2.6, 3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.772549 ), Color( 1, 1, 1, 0 ) ]
@@ -83,10 +83,10 @@ tracks/6/loop_wrap = false
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.105415, 0.105415 ), Vector2( 0.190798, 0.190798 ) ]
+"values": [ Vector2( 0.105415, 0.105415 ), Vector2( 0.274196, 0.274196 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("speedBoost:scale")
@@ -95,10 +95,10 @@ tracks/7/loop_wrap = false
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 1.7 ),
+"times": PoolRealArray( 0, 2.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.091415, 0.0862947 ), Vector2( 0.159343, 0.150418 ) ]
+"values": [ Vector2( 0.091415, 0.0862947 ), Vector2( 0.21308, 0.201145 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("lightning_final:scale")
@@ -107,8 +107,8 @@ tracks/8/loop_wrap = false
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 1.9 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.0879233, 0.0879233 ), Vector2( 0.134212, 0.134212 ) ]
+"values": [ Vector2( 0.0879233, 0.0879233 ), Vector2( 0.230617, 0.230617 ) ]
 }

@@ -89,34 +89,33 @@ __meta__ = {
 }
 
 [node name="lightning_final" type="Sprite" parent="TextureButton"]
-self_modulate = Color( 1, 1, 1, 0.911061 )
+self_modulate = Color( 1, 1, 1, 0.989624 )
 show_behind_parent = true
-position = Vector2( 123.918, 67.3146 )
+position = Vector2( 122.368, 99.8553 )
 rotation = -0.205911
-scale = Vector2( 0.108881, 0.108881 )
+scale = Vector2( 0.0963856, 0.0963856 )
 texture = ExtResource( 3 )
 
 [node name="shield final" type="Sprite" parent="TextureButton"]
-modulate = Color( 1, 1, 1, 0.999799 )
 show_behind_parent = true
-position = Vector2( 99.7429, 117.215 )
-rotation = -0.288304
-scale = Vector2( 0.0321688, 0.0321688 )
+position = Vector2( 99.77, 117.254 )
+rotation = -0.289645
+scale = Vector2( 0.0321265, 0.0321265 )
 texture = ExtResource( 1 )
 
 [node name="speedBoost" type="Sprite" parent="TextureButton"]
-self_modulate = Color( 1, 1, 1, 0.915037 )
+self_modulate = Color( 1, 1, 1, 0.988286 )
 show_behind_parent = true
-position = Vector2( 172.371, 69.5493 )
+position = Vector2( 159.125, 101.721 )
 rotation = 0.321753
-scale = Vector2( 0.125789, 0.118743 )
+scale = Vector2( 0.0982866, 0.0927815 )
 texture = ExtResource( 4 )
 
 [node name="health" type="Sprite" parent="TextureButton"]
-self_modulate = Color( 1, 1, 1, 0.946987 )
+self_modulate = Color( 1, 1, 1, 0.992691 )
 show_behind_parent = true
-position = Vector2( 84.2495, 58.5917 )
-scale = Vector2( 0.154383, 0.154383 )
+position = Vector2( 94.4182, 93.0338 )
+scale = Vector2( 0.116537, 0.116537 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
@@ -129,6 +128,6 @@ tree_root = SubResource( 17 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 18 )
 parameters/store_bubble/TimeScale/scale = 1.0
-parameters/store_bubble2/TimeScale/scale = 0.5
+parameters/store_bubble2/TimeScale/scale = 1.0
 parameters/store_bubble3/TimeScale/scale = 1.0
 script = ExtResource( 8 )
