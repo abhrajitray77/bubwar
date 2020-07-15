@@ -14,6 +14,7 @@ func _ready():
 	ProjectSettings.get_setting("display/window/size/height")
 	ProjectSettings.set("display/window/size/width", screen.x)
 	ProjectSettings.set("display/window/size/height", screen.y)
+	$Pause_menu/InGameButtons.hide()
 
 func _process(_delta):
 	if  ProjectSettings.get_setting("display/window/size/width")== 1080 and ProjectSettings.get_setting("display/window/size/height") == 2220:
@@ -23,13 +24,16 @@ func _process(_delta):
 		node.position.y = 1050
 		$hud/healthBubble.position.y = 2100
 		$hud/PowerupDisplay.position.y = 300
+		$Pause_menu/store_main.position.y = 300
 	viewpos = $Player_stuff/PLayer/Player.position
 	viewpos.x = clamp(viewpos.x, clamp_val_x, screen.x -clamp_val_x)
 	viewpos.y = clamp(viewpos.y, clamp_val_y_min, screen.y -clamp_val_y_max)
 	$Player_stuff/PLayer/Player.set_position(viewpos)
 	if node2.played == true:
 		if anim_played == 1:
+			$Pause_menu/InGameButtons.show()
 			$Pause_menu/InGameButtons/Button_Mod.play("Button_modu")
+			$Pause_menu/store_main/store_mod.play("store_modu")
 			$hud/healthBubble/AnimationPlayer.play("healthModu")
 			$hud/Score/AnimationPlayer.play("score_mod")
 			$hud/coinsCounter/AnimationPlayer.play("coin_count_mod")

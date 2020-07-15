@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/settings low res.png-f7b190ec304b2ea87e67ceed1c1afdc7.stex"
+path="res://.import/settings.png-3e692f465b2a357cbb10de1110c50ede.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/UI/settings low res.png"
-dest_files=[ "res://.import/settings low res.png-f7b190ec304b2ea87e67ceed1c1afdc7.stex" ]
+source_file="res://Assets/sprites/UI/settings.png"
+dest_files=[ "res://.import/settings.png-3e692f465b2a357cbb10de1110c50ede.stex" ]
 
 [params]
 
