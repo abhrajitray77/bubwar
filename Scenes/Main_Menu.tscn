@@ -22,8 +22,8 @@
 [ext_resource path="res://Scenes/PowerupDisplay.tscn" type="PackedScene" id=20]
 [ext_resource path="res://buttons/GameOver.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/coinsCounter.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Assets/sprites/UI/store.png" type="Texture" id=23]
-[ext_resource path="res://Assets/sprites/UI/settings.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/settings.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Assets/sprites/UI/settings_modu.tres" type="Animation" id=24]
 [ext_resource path="res://Scenes/store_main.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/sprites/UI/store_modu.tres" type="Animation" id=26]
 
@@ -114,15 +114,9 @@ anims/Button_modu = ExtResource( 17 )
 [node name="store_mod" type="AnimationPlayer" parent="Pause_menu/store_main"]
 anims/store_modu = ExtResource( 26 )
 
-[node name="settings low res" type="Sprite" parent="."]
-visible = false
-position = Vector2( 104.22, 1815.04 )
-scale = Vector2( 0.554515, 0.582261 )
-z_index = 7
-texture = ExtResource( 24 )
+[node name="settings" parent="Pause_menu" instance=ExtResource( 23 )]
+position = Vector2( 32.1328, -36.5649 )
 
-[node name="store" type="Sprite" parent="settings low res"]
-position = Vector2( 1566.12, -37.6096 )
-scale = Vector2( 0.958227, 0.958227 )
-texture = ExtResource( 23 )
+[node name="settings_mod" type="AnimationPlayer" parent="Pause_menu/settings"]
+anims/settings_modu = ExtResource( 24 )
 [connection signal="animation_finished" from="const/const_anim" to="const/const_anim" method="_on_const_anim_animation_finished"]

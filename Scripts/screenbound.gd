@@ -15,6 +15,7 @@ func _ready():
 	ProjectSettings.set("display/window/size/width", screen.x)
 	ProjectSettings.set("display/window/size/height", screen.y)
 	$Pause_menu/InGameButtons.hide()
+	$Pause_menu/settings/button/TextureButton/AnimationPlayer.play("settings_anim")
 
 func _process(_delta):
 	if  ProjectSettings.get_setting("display/window/size/width")== 1080 and ProjectSettings.get_setting("display/window/size/height") == 2220:
@@ -34,6 +35,7 @@ func _process(_delta):
 			$Pause_menu/InGameButtons.show()
 			$Pause_menu/InGameButtons/Button_Mod.play("Button_modu")
 			$Pause_menu/store_main/store_mod.play("store_modu")
+			$Pause_menu/settings/settings_mod.play("settings_modu")
 			$hud/healthBubble/AnimationPlayer.play("healthModu")
 			$hud/Score/AnimationPlayer.play("score_mod")
 			$hud/coinsCounter/AnimationPlayer.play("coin_count_mod")
