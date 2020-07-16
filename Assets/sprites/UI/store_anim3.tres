@@ -38,7 +38,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 127.816, 99.5684 ), Vector2( 129.806, -45.7217 ) ]
+"values": [ Vector2( 125.244, 112.43 ), Vector2( 129.806, -45.7217 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("speedBoost:self_modulate")

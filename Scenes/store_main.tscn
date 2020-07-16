@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/sprites/powerups/shield final.png" type="Texture" id=1]
 [ext_resource path="res://Assets/sprites/powerups/health.png" type="Texture" id=2]
@@ -9,79 +9,82 @@
 [ext_resource path="res://Assets/sprites/UI/store_bubble1.tres" type="Animation" id=7]
 [ext_resource path="res://Scripts/store_anim.gd" type="Script" id=8]
 [ext_resource path="res://Assets/sprites/UI/store_anim3.tres" type="Animation" id=9]
+[ext_resource path="res://Assets/sprites/UI/store front.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sprites/UI/store back.png" type="Texture" id=11]
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=1]
 animation = "store_bubble"
 
-[sub_resource type="AnimationNodeTimeScale" id=15]
+[sub_resource type="AnimationNodeTimeScale" id=2]
 
-[sub_resource type="AnimationNodeBlendTree" id=16]
+[sub_resource type="AnimationNodeBlendTree" id=3]
 graph_offset = Vector2( -84, 1 )
-nodes/Animation/node = SubResource( 14 )
+nodes/Animation/node = SubResource( 1 )
 nodes/Animation/position = Vector2( 0, 80 )
-nodes/TimeScale/node = SubResource( 15 )
+nodes/TimeScale/node = SubResource( 2 )
 nodes/TimeScale/position = Vector2( 219, 110 )
 nodes/output/position = Vector2( 480, 80 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "store_bubble1"
 
-[sub_resource type="AnimationNodeTimeScale" id=20]
+[sub_resource type="AnimationNodeTimeScale" id=5]
 
-[sub_resource type="AnimationNodeBlendTree" id=21]
+[sub_resource type="AnimationNodeBlendTree" id=6]
 graph_offset = Vector2( 0, 54 )
-nodes/Animation/node = SubResource( 19 )
+nodes/Animation/node = SubResource( 4 )
 nodes/Animation/position = Vector2( 222, 98 )
-nodes/TimeScale/node = SubResource( 20 )
+nodes/TimeScale/node = SubResource( 5 )
 nodes/TimeScale/position = Vector2( 430, 129 )
 nodes/output/position = Vector2( 640, 100 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "store_anim3"
 
-[sub_resource type="AnimationNodeTimeScale" id=23]
+[sub_resource type="AnimationNodeTimeScale" id=8]
 
-[sub_resource type="AnimationNodeBlendTree" id=24]
-nodes/Animation/node = SubResource( 22 )
+[sub_resource type="AnimationNodeBlendTree" id=9]
+nodes/Animation/node = SubResource( 7 )
 nodes/Animation/position = Vector2( 137, 75 )
-nodes/TimeScale/node = SubResource( 23 )
+nodes/TimeScale/node = SubResource( 8 )
 nodes/TimeScale/position = Vector2( 360, 40 )
 nodes/output/position = Vector2( 600, 60 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=17]
-states/store_bubble/node = SubResource( 16 )
+[sub_resource type="AnimationNodeStateMachine" id=13]
+states/store_bubble/node = SubResource( 3 )
 states/store_bubble/position = Vector2( 229, 134 )
-states/store_bubble2/node = SubResource( 21 )
+states/store_bubble2/node = SubResource( 6 )
 states/store_bubble2/position = Vector2( 540, 94 )
-states/store_bubble3/node = SubResource( 24 )
+states/store_bubble3/node = SubResource( 9 )
 states/store_bubble3/position = Vector2( 731, 192 )
-transitions = [ "store_bubble", "store_bubble2", SubResource( 25 ), "store_bubble2", "store_bubble3", SubResource( 26 ), "store_bubble3", "store_bubble", SubResource( 27 ) ]
-graph_offset = Vector2( 16, 55 )
+transitions = [ "store_bubble", "store_bubble2", SubResource( 10 ), "store_bubble2", "store_bubble3", SubResource( 11 ), "store_bubble3", "store_bubble", SubResource( 12 ) ]
+graph_offset = Vector2( 85, 27 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
 [node name="store_main" type="Node2D"]
 
 [node name="TextureButton" type="TextureButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 838.0
-margin_top = 1669.0
+margin_top = 1669.32
 margin_right = 1089.0
-margin_bottom = 1916.0
+margin_bottom = 1916.32
 texture_normal = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -89,33 +92,34 @@ __meta__ = {
 }
 
 [node name="lightning_final" type="Sprite" parent="TextureButton"]
-self_modulate = Color( 1, 1, 1, 0.989624 )
+self_modulate = Color( 1, 1, 1, 0.99079 )
 show_behind_parent = true
-position = Vector2( 122.368, 99.8553 )
+position = Vector2( 124.788, 118.084 )
 rotation = -0.205911
-scale = Vector2( 0.0963856, 0.0963856 )
+scale = Vector2( 0.0954348, 0.0954348 )
 texture = ExtResource( 3 )
 
 [node name="shield final" type="Sprite" parent="TextureButton"]
+modulate = Color( 1, 1, 1, 0.999197 )
 show_behind_parent = true
-position = Vector2( 99.77, 117.254 )
-rotation = -0.289645
-scale = Vector2( 0.0321265, 0.0321265 )
+position = Vector2( 99.6286, 117.052 )
+rotation = -0.288002
+scale = Vector2( 0.0324288, 0.0324288 )
 texture = ExtResource( 1 )
 
 [node name="speedBoost" type="Sprite" parent="TextureButton"]
-self_modulate = Color( 1, 1, 1, 0.988286 )
+self_modulate = Color( 1, 1, 1, 0.989602 )
 show_behind_parent = true
-position = Vector2( 159.125, 101.721 )
+position = Vector2( 158.887, 102.299 )
 rotation = 0.321753
-scale = Vector2( 0.0982866, 0.0927815 )
+scale = Vector2( 0.0975146, 0.0920526 )
 texture = ExtResource( 4 )
 
 [node name="health" type="Sprite" parent="TextureButton"]
-self_modulate = Color( 1, 1, 1, 0.992691 )
+self_modulate = Color( 1, 1, 1, 0.993512 )
 show_behind_parent = true
-position = Vector2( 94.4182, 93.0338 )
-scale = Vector2( 0.116537, 0.116537 )
+position = Vector2( 93.0064, 107.206 )
+scale = Vector2( 0.115287, 0.115287 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
@@ -124,10 +128,21 @@ anims/store_bubble = ExtResource( 6 )
 anims/store_bubble1 = ExtResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="TextureButton"]
-tree_root = SubResource( 17 )
+tree_root = SubResource( 13 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 18 )
+parameters/playback = SubResource( 14 )
 parameters/store_bubble/TimeScale/scale = 1.0
 parameters/store_bubble2/TimeScale/scale = 1.0
 parameters/store_bubble3/TimeScale/scale = 1.0
 script = ExtResource( 8 )
+
+[node name="store front" type="Sprite" parent="TextureButton"]
+position = Vector2( 127.564, 149.72 )
+scale = Vector2( 0.572795, 0.56776 )
+texture = ExtResource( 10 )
+
+[node name="store back" type="Sprite" parent="TextureButton/store front"]
+position = Vector2( -6.73779, -113.648 )
+scale = Vector2( 1, 1.04222 )
+z_index = -1
+texture = ExtResource( 11 )

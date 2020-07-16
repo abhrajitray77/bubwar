@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5, 3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 96.0444, 98.542 ), Vector2( 75.478, 28.8818 ), Vector2( 65.1389, -55.1221 ) ]
+"values": [ Vector2( 94.3296, 113.118 ), Vector2( 75.478, 28.8818 ), Vector2( 65.1389, -55.1221 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("health:self_modulate")
@@ -62,7 +62,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 2, 3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 122.216, 103.059 ), Vector2( 124.788, 49.043 ), Vector2( 113.687, 9.18799 ) ]
+"values": [ Vector2( 124.788, 121.92 ), Vector2( 124.788, 49.043 ), Vector2( 113.687, 9.18799 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("lightning_final:self_modulate")
