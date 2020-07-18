@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pause menu buttons bg.png-7a9330c835314f70c2811ce8e3477f7b.stex"
+path="res://.import/store front.png-860c17ecb7c19b29ebfd6508b6a5185f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/UI/Pause menu buttons bg.png"
-dest_files=[ "res://.import/Pause menu buttons bg.png-7a9330c835314f70c2811ce8e3477f7b.stex" ]
+source_file="res://Assets/sprites/UI/store/store front.png"
+dest_files=[ "res://.import/store front.png-860c17ecb7c19b29ebfd6508b6a5185f.stex" ]
 
 [params]
 

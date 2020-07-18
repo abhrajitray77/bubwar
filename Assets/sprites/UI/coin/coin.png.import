@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pause menu bg.png-6ede0c4d929b32cfd109dcf5794e4b34.stex"
+path="res://.import/coin.png-75eefdd97a913620f55d325320082f56.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/UI/Pause menu bg.png"
-dest_files=[ "res://.import/Pause menu bg.png-6ede0c4d929b32cfd109dcf5794e4b34.stex" ]
+source_file="res://Assets/sprites/UI/coin/coin.png"
+dest_files=[ "res://.import/coin.png-75eefdd97a913620f55d325320082f56.stex" ]
 
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.35
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

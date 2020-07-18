@@ -1,15 +1,16 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Assets/sprites/UI/pause button low res.png" type="Texture" id=1]
-[ext_resource path="res://Assets/sprites/UI/Pause menu bg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/UI/pause/pause button low res.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprites/UI/pause/Pause menu bg.png" type="Texture" id=2]
 [ext_resource path="res://buttons/InGameButtons.gd" type="Script" id=3]
-[ext_resource path="res://Assets/sprites/UI/play button low res.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprites/UI/pause/play button low res.png" type="Texture" id=4]
 [ext_resource path="res://PAMPARAY Demo.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/sprites/menuBg/blue sky.png" type="Texture" id=6]
 [ext_resource path="res://buttons/popup.tres" type="Animation" id=7]
 [ext_resource path="res://buttons/Pause_anim_tree.gd" type="Script" id=8]
-[ext_resource path="res://Assets/sprites/UI/Pause menu buttons bg.png" type="Texture" id=9]
-[ext_resource path="res://Assets/sprites/UI/Pause menu bg red.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sprites/UI/pause/Pause menu buttons bg.png" type="Texture" id=9]
+[ext_resource path="res://Assets/sprites/UI/pause/Pause menu bg red.png" type="Texture" id=10]
+
 
 
 

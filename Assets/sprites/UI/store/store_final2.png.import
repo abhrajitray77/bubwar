@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pause menu bg red.png-fde1768df5c90cb43b0d8cc2d786956b.stex"
+path="res://.import/store_final2.png-ae2f3750ee66ce00ab9846c477d52413.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/UI/Pause menu bg red.png"
-dest_files=[ "res://.import/Pause menu bg red.png-fde1768df5c90cb43b0d8cc2d786956b.stex" ]
+source_file="res://Assets/sprites/UI/store/store_final2.png"
+dest_files=[ "res://.import/store_final2.png-ae2f3750ee66ce00ab9846c477d52413.stex" ]
 
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.39
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

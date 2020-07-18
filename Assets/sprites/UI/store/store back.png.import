@@ -2,27 +2,27 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/settings.png-3e692f465b2a357cbb10de1110c50ede.stex"
+path="res://.import/store back.png-5b82e5c30380e5bf043a2ef9fa9b60fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/UI/settings.png"
-dest_files=[ "res://.import/settings.png-3e692f465b2a357cbb10de1110c50ede.stex" ]
+source_file="res://Assets/sprites/UI/store/store back.png"
+dest_files=[ "res://.import/store back.png-5b82e5c30380e5bf043a2ef9fa9b60fa.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=false
-flags/anisotropic=false
+flags/mipmaps=true
+flags/anisotropic=true
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -23,9 +23,9 @@
 [ext_resource path="res://buttons/GameOver.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/coinsCounter.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/settings.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Assets/sprites/UI/settings_modu.tres" type="Animation" id=24]
+[ext_resource path="res://Assets/sprites/UI/settings/settings_modu.tres" type="Animation" id=24]
 [ext_resource path="res://Scenes/store_main.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Assets/sprites/UI/store_modu.tres" type="Animation" id=26]
+[ext_resource path="res://Assets/sprites/UI/store/store_modu.tres" type="Animation" id=26]
 
 [node name="Main_Menu" type="Node2D"]
 script = ExtResource( 7 )
