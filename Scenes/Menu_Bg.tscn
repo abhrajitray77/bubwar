@@ -17,6 +17,8 @@
 [ext_resource path="res://Scripts/Waves_player.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/stars.tscn" type="PackedScene" id=22]
 
+
+
 [node name="Menu_BG" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]

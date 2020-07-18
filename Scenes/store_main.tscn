@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/sprites/powerups/shield final.png" type="Texture" id=1]
 [ext_resource path="res://Assets/sprites/powerups/health.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Assets/sprites/UI/store_anim3.tres" type="Animation" id=9]
 [ext_resource path="res://Assets/sprites/UI/store front.png" type="Texture" id=10]
 [ext_resource path="res://Assets/sprites/UI/store back.png" type="Texture" id=11]
+[ext_resource path="res://Assets/sprites/UI/store_final2.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/store_main.gd" type="Script" id=13]
+[ext_resource path="res://Assets/sprites/menuBg/blue sky.png" type="Texture" id=14]
+[ext_resource path="res://Assets/sprites/UI/Ui_name_bg.png" type="Texture" id=15]
 
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "store_bubble"
@@ -78,6 +82,27 @@ graph_offset = Vector2( 85, 27 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
 [node name="store_main" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="blue sky" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.611765 )
+position = Vector2( 548.902, 887.505 )
+scale = Vector2( 1.46304, 1.42661 )
+z_index = 1
+texture = ExtResource( 14 )
+
+[node name="store_final" type="Sprite" parent="."]
+visible = false
+position = Vector2( 540.603, 887.498 )
+scale = Vector2( 1.06829, 1.26869 )
+z_index = 2
+texture = ExtResource( 12 )
+
+[node name="Ui_name_bg" type="Sprite" parent="store_final"]
+position = Vector2( -10.1523, -549.018 )
+scale = Vector2( 0.618966, 0.42301 )
+texture = ExtResource( 15 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -146,3 +171,20 @@ position = Vector2( -6.73779, -113.648 )
 scale = Vector2( 1, 1.04222 )
 z_index = -1
 texture = ExtResource( 11 )
+
+[node name="Buttons" type="Node2D" parent="."]
+z_index = 3
+
+[node name="Button" type="Button" parent="Buttons"]
+visible = false
+margin_left = 741.814
+margin_top = 1601.2
+margin_right = 787.814
+margin_bottom = 1621.2
+rect_scale = Vector2( 4.31017, 4.31017 )
+text = "close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Buttons/Button" to="." method="_on_Button_pressed"]

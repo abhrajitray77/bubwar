@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/sprites/UI/Pause menu bg.png" type="Texture" id=7]
 [ext_resource path="res://buttons/GameOver.gd" type="Script" id=8]
 
+
+
 [sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 2 )

@@ -12,6 +12,8 @@
 [ext_resource path="res://Assets/Animes/menu_bg_scroll/bg_colour2.tres" type="Animation" id=10]
 [ext_resource path="res://Assets/Animes/menu_bg_scroll/bg_colour3.tres" type="Animation" id=11]
 
+
+
 [node name="parallax" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
