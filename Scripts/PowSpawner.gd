@@ -89,19 +89,25 @@ func _on_coinTimer_timeout():
 	var coin = co.instance()
 	var coinpos   = Vector2()
 	coinpos.x = rand_range(coin.spriteSize - 150, get_viewport().get_visible_rect().size.x - coin.spriteSize + 50)
-	coinpos.y = 0 - coin.spriteSize - 300
+	coinpos.y = rand_range(0 - coin.spriteSize - 300, 0 - coin.spriteSize )
 	coin.position = coinpos
 	$Container.add_child(coin)
+	_generate_random_coins(coinpos)
 	# Set timer again
 	$coinTimer.wait_time = rand_range(2.0, 4.0)
 	$coinTimer.start()
-	randomize()
-	var coin2 = co.instance()
-	var coin2pos   = Vector2()
-	coin2pos.x = rand_range(coin2.spriteSize - 150, get_viewport().get_visible_rect().size.x - coin2.spriteSize + 50)
-	coin2pos.y = 0 - coin2.spriteSize - 300
-	coin2.position = coin2pos
-	$Container.add_child(coin2)
-	# Set timer again
-	$coinTimer.wait_time = rand_range(2.0, 4.0)
-	$coinTimer.start()
+
+
+func _generate_random_coins(init_coin_pos):
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	var coins = random.randi_range(0, 4)
+	print("Generating",coins,"Coins!")
+	for i in range(coins):
+		var new_coinpos = Vector2()
+		new_coinpos.x = init_coin_pos.x
+		new_coinpos.y = init_coin_pos.y - (180*i)
+		var coin = co.instance()
+		coin.position = new_coinpos
+		print("Coin ",i," at ", new_coinpos)
+		$Container.add_child(coin)
