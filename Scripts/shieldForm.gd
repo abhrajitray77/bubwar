@@ -5,7 +5,7 @@ onready var node3 = get_node("/root/Main_Menu/PowSpawner")
 onready var node4 = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/main_bg")
 var executed = false 
 func _ready():
-	visible = false
+	self.hide()
 	$Area2D/CollisionShape2D.disabled = true
 
 func _process(_delta):

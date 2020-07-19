@@ -102,12 +102,12 @@ func _generate_random_coins(init_coin_pos):
 	var random = RandomNumberGenerator.new()
 	random.randomize()
 	var coins = random.randi_range(0, 4)
-	print("Generating",coins,"Coins!")
+	#print("Generating",coins,"Coins!")
 	for i in range(coins):
 		var new_coinpos = Vector2()
 		new_coinpos.x = init_coin_pos.x
 		new_coinpos.y = init_coin_pos.y - (180*i)
 		var coin = co.instance()
 		coin.position = new_coinpos
-		print("Coin ",i," at ", new_coinpos)
+		#print("Coin ",i," at ", new_coinpos)
 		$Container.add_child(coin)

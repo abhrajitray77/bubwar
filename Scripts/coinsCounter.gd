@@ -19,11 +19,6 @@ func _process(_delta):
 			$Tween.start()
 			tween_played = true
 			play_tween == false
-	#if len(str(score_val)) - len(str(prev_score_val)):
-		#if font_size.size > 50:
-			#font_size.set_size(font_size.size - 10)
-			
-	#prev_score_val = score_val
 
 func _on_Tween_tween_all_completed():
 	set_position(Vector2(973.881, 201.787))

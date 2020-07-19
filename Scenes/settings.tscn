@@ -1,10 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/sprites/UI/settings/settings_anim.tres" type="Animation" id=1]
 [ext_resource path="res://Assets/sprites/UI/settings/settings.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/menuBg/blue sky.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/settings.gd" type="Script" id=4]
+[ext_resource path="res://Assets/sprites/UI/store/close.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sprites/UI/settings/settings_bg.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/music_main.tscn" type="PackedScene" id=7]
 
+[sub_resource type="CircleShape2D" id=1]
 
 [node name="settings" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="blue sky" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.611765 )
+position = Vector2( 540.933, 1019.22 )
+scale = Vector2( 1.478, 1.39524 )
+texture = ExtResource( 3 )
+
+[node name="main" type="Node2D" parent="."]
+
+[node name="settings_bg" type="Sprite" parent="main"]
+position = Vector2( 531.375, 883.108 )
+texture = ExtResource( 6 )
+
+[node name="close" type="Node2D" parent="main"]
+position = Vector2( 822.331, 1499.27 )
+
+[node name="close" type="Sprite" parent="main/close"]
+position = Vector2( 1.76556, -4.24353 )
+scale = Vector2( 0.472814, 0.472814 )
+texture = ExtResource( 5 )
+
+[node name="closeButton" type="TouchScreenButton" parent="main/close"]
+position = Vector2( -64.736, -68.7303 )
+scale = Vector2( 6.7672, 6.7672 )
+shape = SubResource( 1 )
+shape_visible = false
+
+[node name="close_tween" type="Tween" parent="main/close"]
+
+[node name="music_main" parent="main" instance=ExtResource( 7 )]
 
 [node name="button" type="Node2D" parent="."]
 position = Vector2( 76.7647, 1844.39 )
@@ -24,3 +62,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="button/TextureButton"]
 playback_speed = 0.3
 anims/settings_anim = ExtResource( 1 )
+[connection signal="released" from="main/close/closeButton" to="." method="_on_closeButton_released"]
+[connection signal="tween_completed" from="main/close/close_tween" to="." method="_on_close_tween_tween_completed"]
+[connection signal="pressed" from="button/TextureButton" to="." method="_on_TextureButton_pressed"]

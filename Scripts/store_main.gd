@@ -1,5 +1,6 @@
 extends Node2D
 
+var store_on = false
 var tab_1 = false
 
 func _ready():
@@ -25,6 +26,7 @@ func _on_TextureButton_pressed():
 	$store_final.show()
 	$TextureButton.hide()
 	$"blue sky".show()
+	store_on = true
 
 func _on_tab1_released():
 	tab_1 = true
@@ -43,3 +45,4 @@ func _on_close_tween_tween_completed(object, key):
 	$store_final.hide()
 	$TextureButton.show()
 	$"blue sky".hide()
+	store_on = false

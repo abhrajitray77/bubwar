@@ -6,7 +6,6 @@ export var velocity = Vector2()
 export var spriteSize = int() 
 
 func _ready():
-#	print(spriteSize)
 	pass
 
 func _process(delta):
@@ -19,7 +18,3 @@ func _on_Enemy_body_entered(_body: KinematicBody2D):
 	node2.play = true
 	node3.count += 1 
 	queue_free()
-	#ode.score_val = node.score_val + 20
-
-#func _on_Enemy_body_exited(body: KinematicBody2D):
-#	node3.entered = false

@@ -41,3 +41,15 @@ func _process(_delta):
 			$hud/coinsCounter/AnimationPlayer.play("coin_count_mod")
 			anim_played = 2
 	#print(viewpos)
+
+	#turning on store and turning off
+	if $Pause_menu/settings.set_on == true:
+		$Pause_menu/store_main.hide()
+	if $Pause_menu/settings.set_on == false:
+		$Pause_menu/store_main.show()
+
+	#turning on settings and turning off
+	if $Pause_menu/store_main.store_on == true:
+		$Pause_menu/settings.hide()
+	if $Pause_menu/store_main.store_on == false:
+		$Pause_menu/settings.show()
