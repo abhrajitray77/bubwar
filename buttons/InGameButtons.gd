@@ -37,6 +37,13 @@ func _on_Pause_toggled(button_pressed):
 
 func _on_Button_pressed():
 	get_tree().quit()
-
 func _on_Restart_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_Restart_released():
+	get_tree().reload_current_scene()
+
+
+func _on_menu_released():
+	get_tree().quit()

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/buy_power.gd" type="Script" id=1]
+[ext_resource path="res://PAMPARAY Demo.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/sprites/UI/store/buy_bg.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/UI/store/store_item_bg.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=4]
+size = 70
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[node name="store_power" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="store_item_bg" type="Sprite" parent="."]
+position = Vector2( 560.357, 588.966 )
+scale = Vector2( 1.51741, 1.7171 )
+texture = ExtResource( 4 )
+
+[node name="powerup_pic" type="Sprite" parent="."]
+position = Vector2( 264.211, 593.051 )
+scale = Vector2( 0.362766, 0.362766 )
+
+[node name="buy_bg" type="Sprite" parent="."]
+position = Vector2( 792.763, 588.454 )
+scale = Vector2( 0.683959, 0.48476 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 350.553
+margin_top = 568.105
+margin_right = 728.553
+margin_bottom = 636.105
+rect_scale = Vector2( 0.811212, 0.811212 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buyButton" type="TouchScreenButton" parent="."]
+position = Vector2( 700.255, 542.123 )
+scale = Vector2( 9.10106, 4.82387 )
+shape = SubResource( 5 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="released" from="buyButton" to="." method="_on_buyButton_released"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

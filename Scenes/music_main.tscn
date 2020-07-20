@@ -6,6 +6,7 @@
 
 [node name="music_main" type="Node2D"]
 position = Vector2( 334.829, 588.538 )
+scale = Vector2( 1.53866, 1.53866 )
 script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]

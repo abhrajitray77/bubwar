@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/sprites/UI/pause/pause button low res.png" type="Texture" id=1]
 [ext_resource path="res://Assets/sprites/UI/pause/Pause menu bg.png" type="Texture" id=2]
@@ -10,32 +10,85 @@
 [ext_resource path="res://buttons/Pause_anim_tree.gd" type="Script" id=8]
 [ext_resource path="res://Assets/sprites/UI/pause/Pause menu buttons bg.png" type="Texture" id=9]
 [ext_resource path="res://Assets/sprites/UI/pause/Pause menu bg red.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sprites/UI/settings/set_sound.png" type="Texture" id=11]
+[ext_resource path="res://Assets/sprites/UI/settings/set_music_off.png" type="Texture" id=12]
+[ext_resource path="res://Assets/sprites/UI/settings/set_sound_off.png" type="Texture" id=13]
+[ext_resource path="res://Assets/sprites/UI/settings/set_music.png" type="Texture" id=14]
 
+[sub_resource type="RectangleShape2D" id=1]
 
-
-
-[sub_resource type="DynamicFont" id=1]
-size = 60
+[sub_resource type="DynamicFont" id=2]
+size = 120
 font_data = ExtResource( 5 )
 
-[sub_resource type="AnimationNodeAnimation" id=2]
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends Node2D
+
+#var sound_off = false
+
+func _ready():
+	pass
+
+func _on_Tween_tween_completed(object, key):
+	self.scale = Vector2(0.816, 0.816)
+
+func _on_set_on_off_toggled(button_pressed):
+	if button_pressed == true:
+		$Tween.interpolate_property(self, \"scale\", 
+		Vector2(0.6,0.6), Vector2(0.816, 0.816), 0.2, 
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.start()
+	if button_pressed ==false:
+		$Tween.interpolate_property(self, \"scale\", 
+		Vector2(0.6,0.6), Vector2(0.816, 0.816), 0.2, 
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.start()
+"
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends Node2D
+
+#var music_off = false
+
+func _ready():
+	pass
+
+func _on_Tween_tween_completed(object, key):
+	self.scale = Vector2(0.816, 0.816)
+
+func _on_set_on_off_toggled(button_pressed):
+	if button_pressed == true:
+		$Tween.interpolate_property(self, \"scale\", 
+		Vector2(0.6,0.6), Vector2(0.816, 0.816), 0.2, 
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.start()
+	if button_pressed ==false:
+		$Tween.interpolate_property(self, \"scale\", 
+		Vector2(0.6,0.6), Vector2(0.816, 0.816), 0.2, 
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.start()
+"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "popup"
 
-[sub_resource type="AnimationNodeTimeScale" id=3]
+[sub_resource type="AnimationNodeTimeScale" id=5]
 
-[sub_resource type="AnimationNodeBlendTree" id=4]
+[sub_resource type="AnimationNodeBlendTree" id=6]
 graph_offset = Vector2( -326.308, 107.5 )
-nodes/Animation/node = SubResource( 2 )
+nodes/Animation/node = SubResource( 4 )
 nodes/Animation/position = Vector2( -160, 160 )
-nodes/TimeScale/node = SubResource( 3 )
+nodes/TimeScale/node = SubResource( 5 )
 nodes/TimeScale/position = Vector2( 40, 140 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachine" id=5]
-states/popup/node = SubResource( 4 )
+[sub_resource type="AnimationNodeStateMachine" id=7]
+states/popup/node = SubResource( 6 )
 states/popup/position = Vector2( 301, 70 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 
 [node name="InGameButtons" type="Node2D"]
 pause_mode = 2
@@ -44,50 +97,110 @@ script = ExtResource( 3 )
 
 [node name="Pause menu bg" type="Sprite" parent="."]
 position = Vector2( 534.933, 903.658 )
-scale = Vector2( 0.0534692, 0.0495512 )
+scale = Vector2( 1.61697, 1.49849 )
 z_index = 10
 texture = ExtResource( 10 )
 
+[node name="main_menu_bg" type="Sprite" parent="Pause menu bg"]
+show_behind_parent = true
+position = Vector2( 9.96637, 175.191 )
+scale = Vector2( 0.659782, 0.410182 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="menu" type="TouchScreenButton" parent="Pause menu bg/main_menu_bg"]
+position = Vector2( -236.182, -133.925 )
+scale = Vector2( 24.0265, 13.8841 )
+z_index = 1
+shape = SubResource( 1 )
+shape_visible = false
+
+[node name="quit" type="Label" parent="Pause menu bg/main_menu_bg"]
+margin_left = -100.886
+margin_top = -46.0878
+margin_right = 164.0
+margin_bottom = 69.9122
+rect_scale = Vector2( 0.673578, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart_bg" type="Sprite" parent="Pause menu bg"]
+show_behind_parent = true
+position = Vector2( 6.77359, -2.26666 )
+scale = Vector2( 0.659782, 0.410182 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Restart" type="TouchScreenButton" parent="Pause menu bg/restart_bg"]
+position = Vector2( -228.859, -136.752 )
+scale = Vector2( 23.0712, 13.8255 )
+z_index = 1
+shape = SubResource( 3 )
+shape_visible = false
+
+[node name="menu" type="Label" parent="Pause menu bg/restart_bg"]
+margin_left = -195.208
+margin_top = -54.1951
+margin_right = 390.792
+margin_bottom = 61.8049
+rect_scale = Vector2( 0.673578, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="pause_blue" type="Sprite" parent="Pause menu bg"]
+visible = false
 texture = ExtResource( 2 )
 
-[node name="Restart" type="Button" parent="Pause menu bg"]
-margin_left = -172.35
-margin_top = 35.5236
-margin_right = 170.65
-margin_bottom = 146.523
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "restart"
-flat = true
+[node name="sound_main" type="Node2D" parent="Pause menu bg"]
+position = Vector2( 86.1414, -183.876 )
+scale = Vector2( 0.8162, 0.8162 )
+z_index = 2
+script = SubResource( 9 )
+
+[node name="Tween" type="Tween" parent="Pause menu bg/sound_main"]
+
+[node name="set_on_off" type="TextureButton" parent="Pause menu bg/sound_main"]
+margin_left = -98.9618
+margin_top = -95.6741
+margin_right = 168.038
+margin_bottom = 171.326
+rect_scale = Vector2( 0.760495, 0.760495 )
+toggle_mode = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 13 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite2" type="Sprite" parent="Pause menu bg/Restart"]
-show_behind_parent = true
-position = Vector2( 175.982, 54.6143 )
-scale = Vector2( 0.659782, 0.410182 )
-texture = ExtResource( 9 )
+[node name="music_main" type="Node2D" parent="Pause menu bg"]
+position = Vector2( -96.0647, -187.929 )
+scale = Vector2( 0.816, 0.816 )
+script = SubResource( 10 )
 
-[node name="Button" type="Button" parent="Pause menu bg"]
-margin_left = -172.35
-margin_top = -183.668
-margin_right = 170.65
-margin_bottom = -72.6681
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Quit"
-flat = true
+[node name="Tween" type="Tween" parent="Pause menu bg/music_main"]
+
+[node name="set_on_off" type="TextureButton" parent="Pause menu bg/music_main"]
+margin_left = -98.9618
+margin_top = -95.6741
+margin_right = 168.038
+margin_bottom = 171.326
+rect_scale = Vector2( 0.760495, 0.760495 )
+toggle_mode = true
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 12 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="Pause menu bg/Button"]
-show_behind_parent = true
-position = Vector2( 175.982, 56.299 )
-scale = Vector2( 0.659782, 0.410182 )
-texture = ExtResource( 9 )
 
 [node name="Pause_main" type="Node2D" parent="."]
 position = Vector2( 100.422, 111.58 )
@@ -112,18 +225,22 @@ anims/popup = ExtResource( 7 )
 
 [node name="darken_bg" type="Sprite" parent="."]
 self_modulate = Color( 0, 0, 0, 0.717647 )
-position = Vector2( 543.555, 997.879 )
+position = Vector2( 541.968, 997.879 )
 scale = Vector2( 1.46938, 1.51374 )
 z_index = -1
 texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 pause_mode = 2
-tree_root = SubResource( 5 )
+tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 6 )
+parameters/playback = SubResource( 8 )
 parameters/popup/TimeScale/scale = 4.0
 script = ExtResource( 8 )
-[connection signal="pressed" from="Pause menu bg/Restart" to="." method="_on_Restart_pressed"]
-[connection signal="pressed" from="Pause menu bg/Button" to="." method="_on_Button_pressed"]
+[connection signal="released" from="Pause menu bg/main_menu_bg/menu" to="." method="_on_menu_released"]
+[connection signal="released" from="Pause menu bg/restart_bg/Restart" to="." method="_on_Restart_released"]
+[connection signal="tween_completed" from="Pause menu bg/sound_main/Tween" to="Pause menu bg/sound_main" method="_on_Tween_tween_completed"]
+[connection signal="toggled" from="Pause menu bg/sound_main/set_on_off" to="Pause menu bg/sound_main" method="_on_set_on_off_toggled"]
+[connection signal="tween_completed" from="Pause menu bg/music_main/Tween" to="Pause menu bg/music_main" method="_on_Tween_tween_completed"]
+[connection signal="toggled" from="Pause menu bg/music_main/set_on_off" to="Pause menu bg/music_main" method="_on_set_on_off_toggled"]
 [connection signal="toggled" from="Pause_main/Pause" to="." method="_on_Pause_toggled"]

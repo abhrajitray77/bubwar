@@ -15,7 +15,7 @@ dest_files=[ "res://.import/set_music_off.png-c65c5262c224d96c783dd63e1f59e800.s
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.7
+compress/lossy_quality=0.91
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="bubble_main"
 run/main_scene="res://Scenes/Main_Menu.tscn"
-boot_splash/bg_color=Color( 0.458824, 0.345098, 0.803922, 1 )
+boot_splash/image="res://Assets/sprites/UI/foam_party_splashScreen.png"
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://Assets/sprites/bubble blue low res.png"
 
 [debug]

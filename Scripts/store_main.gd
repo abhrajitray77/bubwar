@@ -46,3 +46,4 @@ func _on_close_tween_tween_completed(object, key):
 	$TextureButton.show()
 	$"blue sky".hide()
 	store_on = false
+

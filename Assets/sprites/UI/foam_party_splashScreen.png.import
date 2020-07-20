@@ -2,26 +2,26 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/set_sound.png-67fbef6cbecedbda0d2b8e79a75fb908.stex"
+path="res://.import/foam_party_splashScreen.png-95fb3d89e8eac576b0ce15b04d17b9bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/UI/settings/set_sound.png"
-dest_files=[ "res://.import/set_sound.png-67fbef6cbecedbda0d2b8e79a75fb908.stex" ]
+source_file="res://Assets/sprites/UI/foam_party_splashScreen.png"
+dest_files=[ "res://.import/foam_party_splashScreen.png-95fb3d89e8eac576b0ce15b04d17b9bf.stex" ]
 
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.91
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=true
 flags/srgb=2
 process/fix_alpha_border=true

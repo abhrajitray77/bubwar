@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/sprites/UI/settings/settings_anim.tres" type="Animation" id=1]
 [ext_resource path="res://Assets/sprites/UI/settings/settings.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/sprites/UI/settings/settings_bg.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/music_main.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/sound_main.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/sprites/UI/settings/Ui_name_settings.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -22,6 +23,7 @@ scale = Vector2( 1.478, 1.39524 )
 texture = ExtResource( 3 )
 
 [node name="main" type="Node2D" parent="."]
+visible = false
 
 [node name="settings_bg" type="Sprite" parent="main"]
 position = Vector2( 531.375, 883.108 )
@@ -44,9 +46,15 @@ shape_visible = false
 [node name="close_tween" type="Tween" parent="main/close"]
 
 [node name="music_main" parent="main" instance=ExtResource( 7 )]
+position = Vector2( 344.899, 721.968 )
 
 [node name="sound_main" parent="main" instance=ExtResource( 8 )]
-position = Vector2( 711.021, 594.078 )
+position = Vector2( 680.81, 730.026 )
+
+[node name="Ui_name_settings" type="Sprite" parent="main"]
+position = Vector2( 526.208, 337.365 )
+scale = Vector2( 0.76705, 0.76705 )
+texture = ExtResource( 9 )
 
 [node name="button" type="Node2D" parent="."]
 position = Vector2( 76.7647, 1844.39 )

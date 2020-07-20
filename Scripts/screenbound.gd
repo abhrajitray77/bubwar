@@ -45,11 +45,16 @@ func _process(_delta):
 	#turning on store and turning off
 	if $Pause_menu/settings.set_on == true:
 		$Pause_menu/store_main.hide()
+		$Player_stuff/PLayer/Player.set_process_input(false)
 	if $Pause_menu/settings.set_on == false:
 		$Pause_menu/store_main.show()
+		$Player_stuff/PLayer/Player.set_process_input(true)
+
 
 	#turning on settings and turning off
 	if $Pause_menu/store_main.store_on == true:
 		$Pause_menu/settings.hide()
+		$Player_stuff/PLayer/Player/main_bg.set_process_input(false)
 	if $Pause_menu/store_main.store_on == false:
 		$Pause_menu/settings.show()
+		$Player_stuff/PLayer/Player/main_bg.set_process_input(true)
