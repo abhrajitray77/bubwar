@@ -12,7 +12,7 @@ func _process(delta):
 
 func _on_closeButton_released():
 	$main/close/close_tween.interpolate_property($main/close/close
-	, "scale", Vector2(0.325, 0.28), Vector2(0.442, 0.38), 0.2,
+	, "scale", Vector2(0.325, 0.325), Vector2(0.473, 0.473), 0.2,
 	Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$main/close/close_tween.start()
 
