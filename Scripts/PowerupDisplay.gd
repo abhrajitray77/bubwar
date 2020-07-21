@@ -5,7 +5,6 @@ onready var shield = false
 onready var health = false
 onready var speed = false
 var tween_played = false
-var shield_on = false
 
 func _ready():
 	$powerups/Lightning.hide()
@@ -26,11 +25,9 @@ func _process(_delta):
 		node.powActive = true
 	else:
 		$powerups/Lightning.hide()
-	if shield == true and shield_on == false:
+	if shield == true :
 		$powerups/Shield.show()
 		node.powActive = true
-	elif shield == true and shield_on == true:
-		$powerups/Shield.hide() 
 	else:
 		$powerups/Shield.hide()
 	if speed == true:

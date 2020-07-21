@@ -1,4 +1,5 @@
 extends Control
+onready var node4 = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/main_bg")
 onready var node = get_node("/root/Main_Menu/Pause_menu/InGameButtons")
 onready var node2 = get_node("/root/Main_Menu/Pause_menu/GameOver")
 func _process(_delta):
@@ -12,4 +13,5 @@ func _notification(what) -> void:
 		
 		#print("infocus")
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
-		node.press_tog = true
+		if node4.played == true:
+			node.press_tog = true

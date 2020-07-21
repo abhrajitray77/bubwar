@@ -19,3 +19,8 @@ func _on_logo_player_animation_finished(anim_name):
 		$logo_player.play("foam_looper")
 		$logo_player.playback_speed = 0.110
 		$bubbles_anim/bubble_anim_logo.play("bubble_logo")
+
+
+func _on_bubble_anim_logo_animation_finished(anim_name):
+	if anim_name == "bubble_foam_modu":
+		$bubbles_anim.hide()

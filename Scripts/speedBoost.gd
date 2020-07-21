@@ -13,8 +13,6 @@ func _process(delta):
 	if get_position().y - spriteSize >= get_viewport_rect().size.y:
 		queue_free()
 
-func _on_Powerup_body_entered(_body: KinematicBody2D):
+func _on_speedBoost_body_entered(_body: KinematicBody2D):
 	node.speed = true
-	node.shield = true
-	node.shield_on = true
 	queue_free()

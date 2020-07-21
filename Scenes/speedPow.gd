@@ -18,7 +18,6 @@ func _process(_delta):
 		if node.speed == true:
 			if timescale == false:
 				if powAnim == false:
-					node.shield = true
 					Engine.time_scale = FAST_TIME
 					$speedTimer.wait_time = WAIT_TIME * FAST_TIME
 					$speedTimer.start()
@@ -32,4 +31,4 @@ func _on_speedTimer_timeout():
 	node.speed = false
 	node3.powActive = false
 	Engine.time_scale = SLOW_TIME
-	node.shield = false
+

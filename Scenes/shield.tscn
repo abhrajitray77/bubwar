@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="Powerup" type="Area2D"]
+[node name="shield" type="Area2D"]
 position = Vector2( 567.217, 163.774 )
 scale = Vector2( 0.6934, 0.6934 )
 script = ExtResource( 2 )
@@ -21,4 +21,4 @@ texture = ExtResource( 1 )
 position = Vector2( 0.902527, 4.51248 )
 scale = Vector2( 10.0016, 10.4016 )
 shape = SubResource( 1 )
-[connection signal="body_entered" from="." to="." method="_on_Powerup_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_shield_body_entered"]

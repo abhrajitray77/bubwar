@@ -103,7 +103,6 @@ script = ExtResource( 16 )
 
 [node name="shield" parent="Player" instance=ExtResource( 17 )]
 position = Vector2( 6.93695, -5.35925 )
-scale = Vector2( 1.58877, 1.58877 )
 z_index = -1
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Player/shield"]

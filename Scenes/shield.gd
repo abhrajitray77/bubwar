@@ -14,6 +14,6 @@ func _process(delta):
 		queue_free()
 
 
-func _on_Powerup_body_entered(_body: KinematicBody2D):
+func _on_shield_body_entered(_body: KinematicBody2D):
 	node2.shield = true
 	queue_free()

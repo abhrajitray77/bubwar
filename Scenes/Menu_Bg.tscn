@@ -294,3 +294,4 @@ z_index = -1
 texture = ExtResource( 15 )
 [connection signal="animation_changed" from="logo/logo_player" to="logo" method="_on_logo_player_animation_changed"]
 [connection signal="animation_finished" from="logo/logo_player" to="logo" method="_on_logo_player_animation_finished"]
+[connection signal="animation_finished" from="logo/bubbles_anim/bubble_anim_logo" to="logo" method="_on_bubble_anim_logo_animation_finished"]
