@@ -9,15 +9,11 @@ onready var view = get_viewport_rect().size
 func _ready():
 	$"Pause menu bg".hide()
 	$darken_bg.hide()
-	$"Pause menu bg/pause_blue".hide()
-	
+
 func _process(_delta):
-	if node2.score_val > rand_range(800.0, 1000.0):
-		$"Pause menu bg/pause_blue".show()
 	if press_tog == true:
 		$Pause_main/Pause.set("pressed", true)
 
-		#$"Pause menu bg/pause_blue".show()
 func _on_Pause_toggled(button_pressed):
 	pressed = pressed + 1
 	print(pressed)
@@ -34,16 +30,9 @@ func _on_Pause_toggled(button_pressed):
 	else:
 		$"Pause menu bg".hide()
 		$darken_bg.hide()
-
-func _on_Button_pressed():
-	get_tree().quit()
-func _on_Restart_pressed():
-	get_tree().reload_current_scene()
-
-
+		
 func _on_Restart_released():
 	get_tree().reload_current_scene()
-
 
 func _on_menu_released():
 	get_tree().quit()

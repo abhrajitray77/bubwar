@@ -1,7 +1,6 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/sprites/UI/pause/pause button low res.png" type="Texture" id=1]
-[ext_resource path="res://Assets/sprites/UI/pause/Pause menu bg.png" type="Texture" id=2]
 [ext_resource path="res://buttons/InGameButtons.gd" type="Script" id=3]
 [ext_resource path="res://Assets/sprites/UI/pause/play button low res.png" type="Texture" id=4]
 [ext_resource path="res://PAMPARAY Demo.otf" type="DynamicFontData" id=5]
@@ -23,7 +22,7 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Node2D
 
 #var sound_off = false
@@ -47,7 +46,7 @@ func _on_set_on_off_toggled(button_pressed):
 		$Tween.start()
 "
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=5]
 script/source = "extends Node2D
 
 #var music_off = false
@@ -71,24 +70,24 @@ func _on_set_on_off_toggled(button_pressed):
 		$Tween.start()
 "
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "popup"
 
-[sub_resource type="AnimationNodeTimeScale" id=5]
+[sub_resource type="AnimationNodeTimeScale" id=7]
 
-[sub_resource type="AnimationNodeBlendTree" id=6]
+[sub_resource type="AnimationNodeBlendTree" id=8]
 graph_offset = Vector2( -326.308, 107.5 )
-nodes/Animation/node = SubResource( 4 )
+nodes/Animation/node = SubResource( 6 )
 nodes/Animation/position = Vector2( -160, 160 )
-nodes/TimeScale/node = SubResource( 5 )
+nodes/TimeScale/node = SubResource( 7 )
 nodes/TimeScale/position = Vector2( 40, 140 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachine" id=7]
-states/popup/node = SubResource( 6 )
+[sub_resource type="AnimationNodeStateMachine" id=9]
+states/popup/node = SubResource( 8 )
 states/popup/position = Vector2( 301, 70 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
 
 [node name="InGameButtons" type="Node2D"]
 pause_mode = 2
@@ -155,15 +154,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="pause_blue" type="Sprite" parent="Pause menu bg"]
-visible = false
-texture = ExtResource( 2 )
-
 [node name="sound_main" type="Node2D" parent="Pause menu bg"]
 position = Vector2( 86.1414, -183.876 )
 scale = Vector2( 0.8162, 0.8162 )
 z_index = 2
-script = SubResource( 9 )
+script = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="Pause menu bg/sound_main"]
 
@@ -184,7 +179,7 @@ __meta__ = {
 [node name="music_main" type="Node2D" parent="Pause menu bg"]
 position = Vector2( -96.0647, -187.929 )
 scale = Vector2( 0.816, 0.816 )
-script = SubResource( 10 )
+script = SubResource( 5 )
 
 [node name="Tween" type="Tween" parent="Pause menu bg/music_main"]
 
@@ -232,9 +227,9 @@ texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 pause_mode = 2
-tree_root = SubResource( 7 )
+tree_root = SubResource( 9 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 8 )
+parameters/playback = SubResource( 10 )
 parameters/popup/TimeScale/scale = 4.0
 script = ExtResource( 8 )
 [connection signal="released" from="Pause menu bg/main_menu_bg/menu" to="." method="_on_menu_released"]
