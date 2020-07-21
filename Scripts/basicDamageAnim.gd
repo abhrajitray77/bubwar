@@ -9,6 +9,5 @@ func _process(_delta):
 	if play == true:
 		$AnimationPlayer.play("damageFlash")
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	anim_name = "damageFlash"
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	play = false

@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	pass
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	self.scale = Vector2(1.539, 1.539)
 
 func _on_set_on_off_toggled(button_pressed):

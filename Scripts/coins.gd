@@ -17,7 +17,7 @@ func _on_Area2D_body_entered(body: KinematicBody2D):
 	node.tween_played = false
 	$AnimationPlayer.play("coinAnim")
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	node.coin_val = node.coin_val + 1
 	print("coin entered aarea")
 	node.play_tween = true
@@ -25,6 +25,5 @@ func _on_Area2D_area_entered(area):
 	$AnimationPlayer.play("coinAnim")
 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	anim_name = "coinAnim"
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	queue_free()

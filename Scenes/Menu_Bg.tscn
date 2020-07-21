@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/sprites/menuBg/nemu water1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/sprites/menuBg/menu white sky.png" type="Texture" id=2]
@@ -12,36 +12,47 @@
 [ext_resource path="res://Assets/sprites/menuBg/menu water shader2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/sprites/waves shadow 1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/sprites/menuBg/blue sky.png" type="Texture" id=12]
+[ext_resource path="res://Assets/sprites/UI/logo_position.tres" type="Animation" id=13]
+[ext_resource path="res://Assets/sprites/UI/party.png" type="Texture" id=14]
+[ext_resource path="res://Assets/sprites/UI/foam.png" type="Texture" id=15]
+[ext_resource path="res://Assets/sprites/UI/bg.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/logo.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Waves.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Animes/waves/WavesAnim.tres" type="Animation" id=19]
 [ext_resource path="res://Scripts/Waves_player.gd" type="Script" id=20]
+[ext_resource path="res://Assets/sprites/UI/foam_looper.tres" type="Animation" id=21]
 [ext_resource path="res://Scenes/stars.tscn" type="PackedScene" id=22]
-
-
 
 [node name="Menu_BG" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="menu white sky blue1" type="Sprite" parent="Node2D"]
 position = Vector2( 536.202, 614.923 )
 scale = Vector2( 1.09016, 0.694197 )
-z_index = 1
+z_index = -1
 texture = ExtResource( 3 )
 
 [node name="menu white sky" type="Sprite" parent="Node2D"]
 position = Vector2( 551.102, 1069.31 )
 scale = Vector2( 6.25938, 10.6517 )
+z_index = -2
 texture = ExtResource( 2 )
 
 [node name="nemu water1" type="Sprite" parent="Node2D"]
 position = Vector2( 543.852, 1197.97 )
 scale = Vector2( 1.04649, 0.796757 )
+z_index = -2
 texture = ExtResource( 1 )
 
 [node name="nemu water2" type="Sprite" parent="Node2D/nemu water1"]
 position = Vector2( 0, 159.094 )
 scale = Vector2( 1, 1.16572 )
+z_index = -2
 texture = ExtResource( 1 )
 
 [node name="menu water shader1" type="Sprite" parent="Node2D"]
@@ -120,6 +131,10 @@ z_index = 4
 texture = ExtResource( 11 )
 
 [node name="Waves_holder" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Waves" parent="Waves_holder" instance=ExtResource( 18 )]
 z_index = 2
@@ -147,3 +162,34 @@ script = ExtResource( 20 )
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Waves_holder/Waves4"]
 
 [node name="parallax" parent="." instance=ExtResource( 22 )]
+position = Vector2( 0, 5.71997 )
+
+[node name="logo" type="Node2D" parent="."]
+script = ExtResource( 17 )
+
+[node name="bg" type="Sprite" parent="logo"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 549.389, 1472.08 )
+scale = Vector2( 0.533788, 0.533788 )
+z_index = -1
+texture = ExtResource( 16 )
+
+[node name="foam_party" type="Sprite" parent="logo"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 552.21, 1472.08 )
+scale = Vector2( 0.533788, 0.533788 )
+z_index = -1
+texture = ExtResource( 15 )
+
+[node name="party" type="Sprite" parent="logo"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 754.217, 1472.08 )
+scale = Vector2( 0.499065, 0.499065 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="logo_player" type="AnimationPlayer" parent="logo"]
+anims/foam_looper = ExtResource( 21 )
+anims/logo_position = ExtResource( 13 )
+[connection signal="animation_changed" from="logo/logo_player" to="logo" method="_on_logo_player_animation_changed"]
+[connection signal="animation_finished" from="logo/logo_player" to="logo" method="_on_logo_player_animation_finished"]

@@ -10,7 +10,7 @@ func _ready():
 	#tab modulation
 	tab_1 = true
 
-func _process(delta):
+func _process(_delta):
 	if tab_1 == true:
 		$store_final/tabs/store_tab2.self_modulate = Color(0.521569, 0.305882, 0.305882)
 		$store_final/tabs/store_tab1.z_index = 1
@@ -41,7 +41,7 @@ func _on_closeButton_released():
 	$store_final/buttons/close_main/close_tween.start()
 
 
-func _on_close_tween_tween_completed(object, key):
+func _on_close_tween_tween_completed(_object, _key):
 	$store_final.hide()
 	$TextureButton.show()
 	$"blue sky".hide()

@@ -28,7 +28,7 @@
 
 [sub_resource type="CircleShape2D" id=3]
 
-[sub_resource type="GDScript" id=20]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Node2D
 
 
@@ -43,17 +43,17 @@ func _on_buyButton_released():
 	$Tween.start()
 
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	$buy_bg.scale = Vector2(0.684, 0.485)
 "
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=5]
 size = 70
 font_data = ExtResource( 20 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=6]
 
-[sub_resource type="GDScript" id=23]
+[sub_resource type="GDScript" id=7]
 script/source = "extends Node2D
 
 
@@ -72,7 +72,7 @@ func _on_Tween_tween_completed(object, key):
 	$buy_bg.scale = Vector2(0.684, 0.485)
 "
 
-[sub_resource type="GDScript" id=24]
+[sub_resource type="GDScript" id=8]
 script/source = "extends Node2D
 
 
@@ -87,17 +87,17 @@ func _on_buyButton_released():
 	$Tween.start()
 
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	$buy_bg.scale = Vector2(0.684, 0.485)
 "
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=9]
 size = 70
 font_data = ExtResource( 20 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=10]
 
-[sub_resource type="GDScript" id=27]
+[sub_resource type="GDScript" id=11]
 script/source = "extends Node2D
 
 
@@ -115,71 +115,71 @@ func _on_buyButton_released():
 func _on_Tween_tween_completed(object, key):
 	$buy_bg.scale = Vector2(0.684, 0.485)
 "
-
-[sub_resource type="AnimationNodeAnimation" id=6]
-animation = "store_bubble"
-
-[sub_resource type="AnimationNodeTimeScale" id=7]
-
-[sub_resource type="AnimationNodeBlendTree" id=8]
-graph_offset = Vector2( -84, 1 )
-nodes/Animation/node = SubResource( 6 )
-nodes/Animation/position = Vector2( 0, 80 )
-nodes/TimeScale/node = SubResource( 7 )
-nodes/TimeScale/position = Vector2( 219, 110 )
-nodes/output/position = Vector2( 480, 80 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
-
-[sub_resource type="AnimationNodeAnimation" id=9]
-animation = "store_bubble1"
-
-[sub_resource type="AnimationNodeTimeScale" id=10]
-
-[sub_resource type="AnimationNodeBlendTree" id=11]
-graph_offset = Vector2( 0, 54 )
-nodes/Animation/node = SubResource( 9 )
-nodes/Animation/position = Vector2( 222, 98 )
-nodes/TimeScale/node = SubResource( 10 )
-nodes/TimeScale/position = Vector2( 430, 129 )
-nodes/output/position = Vector2( 640, 100 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
 [sub_resource type="AnimationNodeAnimation" id=12]
-animation = "store_anim3"
+animation = "store_bubble"
 
 [sub_resource type="AnimationNodeTimeScale" id=13]
 
 [sub_resource type="AnimationNodeBlendTree" id=14]
+graph_offset = Vector2( -84, 1 )
 nodes/Animation/node = SubResource( 12 )
-nodes/Animation/position = Vector2( 137, 75 )
+nodes/Animation/position = Vector2( 0, 80 )
 nodes/TimeScale/node = SubResource( 13 )
+nodes/TimeScale/position = Vector2( 219, 110 )
+nodes/output/position = Vector2( 480, 80 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "store_bubble1"
+
+[sub_resource type="AnimationNodeTimeScale" id=16]
+
+[sub_resource type="AnimationNodeBlendTree" id=17]
+graph_offset = Vector2( 0, 54 )
+nodes/Animation/node = SubResource( 15 )
+nodes/Animation/position = Vector2( 222, 98 )
+nodes/TimeScale/node = SubResource( 16 )
+nodes/TimeScale/position = Vector2( 430, 129 )
+nodes/output/position = Vector2( 640, 100 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "store_anim3"
+
+[sub_resource type="AnimationNodeTimeScale" id=19]
+
+[sub_resource type="AnimationNodeBlendTree" id=20]
+nodes/Animation/node = SubResource( 18 )
+nodes/Animation/position = Vector2( 137, 75 )
+nodes/TimeScale/node = SubResource( 19 )
 nodes/TimeScale/position = Vector2( 360, 40 )
 nodes/output/position = Vector2( 600, 60 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=18]
-states/store_bubble/node = SubResource( 8 )
+[sub_resource type="AnimationNodeStateMachine" id=24]
+states/store_bubble/node = SubResource( 14 )
 states/store_bubble/position = Vector2( 229, 134 )
-states/store_bubble2/node = SubResource( 11 )
+states/store_bubble2/node = SubResource( 17 )
 states/store_bubble2/position = Vector2( 540, 94 )
-states/store_bubble3/node = SubResource( 14 )
+states/store_bubble3/node = SubResource( 20 )
 states/store_bubble3/position = Vector2( 731, 192 )
-transitions = [ "store_bubble", "store_bubble2", SubResource( 15 ), "store_bubble2", "store_bubble3", SubResource( 16 ), "store_bubble3", "store_bubble", SubResource( 17 ) ]
+transitions = [ "store_bubble", "store_bubble2", SubResource( 21 ), "store_bubble2", "store_bubble3", SubResource( 22 ), "store_bubble3", "store_bubble", SubResource( 23 ) ]
 graph_offset = Vector2( 85, 27 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
 
 [node name="store_main" type="Node2D"]
 script = ExtResource( 13 )
@@ -260,7 +260,7 @@ z_index = 2
 
 [node name="speedBoost" type="Node2D" parent="store_final/powerups"]
 position = Vector2( -5.43408, 16.3022 )
-script = SubResource( 20 )
+script = SubResource( 4 )
 
 [node name="store_item_bg" type="Sprite" parent="store_final/powerups/speedBoost"]
 position = Vector2( 560.357, 588.966 )
@@ -283,7 +283,7 @@ margin_top = 568.105
 margin_right = 728.553
 margin_bottom = 636.105
 rect_scale = Vector2( 0.811212, 0.811212 )
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Speed Boost"
 __meta__ = {
@@ -293,13 +293,13 @@ __meta__ = {
 [node name="buyButton" type="TouchScreenButton" parent="store_final/powerups/speedBoost"]
 position = Vector2( 700.255, 542.123 )
 scale = Vector2( 9.10106, 4.82387 )
-shape = SubResource( 22 )
+shape = SubResource( 6 )
 
 [node name="Tween" type="Tween" parent="store_final/powerups/speedBoost"]
 
 [node name="lightning_pow" type="Node2D" parent="store_final/powerups"]
 position = Vector2( -6.78382, 257.745 )
-script = SubResource( 23 )
+script = SubResource( 7 )
 
 [node name="store_item_bg" type="Sprite" parent="store_final/powerups/lightning_pow"]
 position = Vector2( 560.357, 588.966 )
@@ -322,7 +322,7 @@ margin_top = 568.105
 margin_right = 728.553
 margin_bottom = 636.105
 rect_scale = Vector2( 0.811212, 0.811212 )
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Lightning"
 __meta__ = {
@@ -332,13 +332,13 @@ __meta__ = {
 [node name="buyButton" type="TouchScreenButton" parent="store_final/powerups/lightning_pow"]
 position = Vector2( 700.255, 542.123 )
 scale = Vector2( 9.10106, 4.82387 )
-shape = SubResource( 22 )
+shape = SubResource( 6 )
 
 [node name="Tween" type="Tween" parent="store_final/powerups/lightning_pow"]
 
 [node name="shield_pow" type="Node2D" parent="store_final/powerups"]
 position = Vector2( -9.42847, 503.635 )
-script = SubResource( 24 )
+script = SubResource( 8 )
 
 [node name="store_item_bg" type="Sprite" parent="store_final/powerups/shield_pow"]
 position = Vector2( 560.357, 588.966 )
@@ -361,7 +361,7 @@ margin_top = 568.105
 margin_right = 728.553
 margin_bottom = 636.105
 rect_scale = Vector2( 0.811212, 0.811212 )
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Shield"
 __meta__ = {
@@ -371,13 +371,13 @@ __meta__ = {
 [node name="buyButton" type="TouchScreenButton" parent="store_final/powerups/shield_pow"]
 position = Vector2( 700.255, 542.123 )
 scale = Vector2( 9.10106, 4.82387 )
-shape = SubResource( 26 )
+shape = SubResource( 10 )
 
 [node name="Tween" type="Tween" parent="store_final/powerups/shield_pow"]
 
 [node name="health_pow" type="Node2D" parent="store_final/powerups"]
 position = Vector2( -11.9838, 746.978 )
-script = SubResource( 27 )
+script = SubResource( 11 )
 
 [node name="store_item_bg" type="Sprite" parent="store_final/powerups/health_pow"]
 position = Vector2( 560.357, 588.966 )
@@ -400,7 +400,7 @@ margin_top = 568.105
 margin_right = 728.553
 margin_bottom = 636.105
 rect_scale = Vector2( 0.811212, 0.811212 )
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Health"
 __meta__ = {
@@ -410,7 +410,7 @@ __meta__ = {
 [node name="buyButton" type="TouchScreenButton" parent="store_final/powerups/health_pow"]
 position = Vector2( 700.255, 542.123 )
 scale = Vector2( 9.10106, 4.82387 )
-shape = SubResource( 26 )
+shape = SubResource( 10 )
 
 [node name="Tween" type="Tween" parent="store_final/powerups/health_pow"]
 
@@ -463,9 +463,9 @@ anims/store_bubble = ExtResource( 6 )
 anims/store_bubble1 = ExtResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="TextureButton"]
-tree_root = SubResource( 18 )
+tree_root = SubResource( 24 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 19 )
+parameters/playback = SubResource( 25 )
 parameters/store_bubble/TimeScale/scale = 1.0
 parameters/store_bubble2/TimeScale/scale = 1.0
 parameters/store_bubble3/TimeScale/scale = 1.0

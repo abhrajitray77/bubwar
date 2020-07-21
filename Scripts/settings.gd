@@ -6,7 +6,7 @@ func _ready():
 	$main.hide()
 	$"blue sky".hide()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -17,7 +17,7 @@ func _on_closeButton_released():
 	$main/close/close_tween.start()
 
 
-func _on_close_tween_tween_completed(object, key):
+func _on_close_tween_tween_completed(_object, _key):
 	$main.hide()
 	$button/TextureButton.show()
 	$"blue sky".hide()
