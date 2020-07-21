@@ -26,6 +26,9 @@ func _process(_delta):
 		$hud/healthBubble.position.y = 2100
 		$hud/PowerupDisplay.position.y = 300
 		$Pause_menu/store_main.position.y = 300
+		$Pause_menu/settings.position.y = 269
+		$Pause_menu/settings/main.position.y = -200.929
+		$Pause_menu/store_main/store_final.position.y = 580.759
 	viewpos = $Player_stuff/PLayer/Player.position
 	viewpos.x = clamp(viewpos.x, clamp_val_x, screen.x -clamp_val_x)
 	viewpos.y = clamp(viewpos.y, clamp_val_y_min, screen.y -clamp_val_y_max)
@@ -45,16 +48,11 @@ func _process(_delta):
 	#turning on store and turning off
 	if $Pause_menu/settings.set_on == true:
 		$Pause_menu/store_main.hide()
-		$Player_stuff/PLayer/Player.set_process_input(false)
 	if $Pause_menu/settings.set_on == false:
 		$Pause_menu/store_main.show()
-		$Player_stuff/PLayer/Player.set_process_input(true)
-
 
 	#turning on settings and turning off
 	if $Pause_menu/store_main.store_on == true:
 		$Pause_menu/settings.hide()
-		$Player_stuff/PLayer/Player/main_bg.set_process_input(false)
 	if $Pause_menu/store_main.store_on == false:
 		$Pause_menu/settings.show()
-		$Player_stuff/PLayer/Player/main_bg.set_process_input(true)

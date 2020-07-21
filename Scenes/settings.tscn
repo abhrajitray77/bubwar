@@ -40,6 +40,7 @@ texture = ExtResource( 5 )
 [node name="closeButton" type="TouchScreenButton" parent="main/close"]
 position = Vector2( -64.736, -68.7303 )
 scale = Vector2( 6.7672, 6.7672 )
+z_index = 4
 shape = SubResource( 1 )
 shape_visible = false
 

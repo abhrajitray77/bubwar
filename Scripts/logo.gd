@@ -10,9 +10,12 @@ func _process(_delta):
 		if anim_stopped == false:
 			$logo_player.playback_speed = 0.8
 			$logo_player.play_backwards("logo_position")
+			$bubbles_anim/bubble_anim_logo.stop()
+			$bubbles_anim/bubble_anim_logo.play("bubble_foam_modu")
 			anim_stopped = true
 
 func _on_logo_player_animation_finished(anim_name):
 	if anim_name == 'logo_position':
 		$logo_player.play("foam_looper")
 		$logo_player.playback_speed = 0.110
+		$bubbles_anim/bubble_anim_logo.play("bubble_logo")

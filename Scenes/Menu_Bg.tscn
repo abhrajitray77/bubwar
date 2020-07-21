@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/sprites/menuBg/nemu water1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/sprites/menuBg/menu white sky.png" type="Texture" id=2]
@@ -22,6 +22,9 @@
 [ext_resource path="res://Scripts/Waves_player.gd" type="Script" id=20]
 [ext_resource path="res://Assets/sprites/UI/foam_looper.tres" type="Animation" id=21]
 [ext_resource path="res://Scenes/stars.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/sprites/UI/bubble_logo.tres" type="Animation" id=23]
+[ext_resource path="res://Assets/sprites/UI/bubbles.png" type="Texture" id=24]
+[ext_resource path="res://Assets/sprites/UI/bubble_foam_modu.tres" type="Animation" id=25]
 
 [node name="Menu_BG" type="Node2D"]
 
@@ -162,7 +165,7 @@ script = ExtResource( 20 )
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Waves_holder/Waves4"]
 
 [node name="parallax" parent="." instance=ExtResource( 22 )]
-position = Vector2( 0, 5.71997 )
+position = Vector2( 0, 7.47806 )
 
 [node name="logo" type="Node2D" parent="."]
 script = ExtResource( 17 )
@@ -174,13 +177,6 @@ scale = Vector2( 0.533788, 0.533788 )
 z_index = -1
 texture = ExtResource( 16 )
 
-[node name="foam_party" type="Sprite" parent="logo"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 552.21, 1472.08 )
-scale = Vector2( 0.533788, 0.533788 )
-z_index = -1
-texture = ExtResource( 15 )
-
 [node name="party" type="Sprite" parent="logo"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 754.217, 1472.08 )
@@ -191,5 +187,110 @@ texture = ExtResource( 14 )
 [node name="logo_player" type="AnimationPlayer" parent="logo"]
 anims/foam_looper = ExtResource( 21 )
 anims/logo_position = ExtResource( 13 )
+
+[node name="bubbles_anim" type="Node2D" parent="logo"]
+
+[node name="bubbles" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 217.886, 273.012 )
+scale = Vector2( 0.387115, 0.387115 )
+texture = ExtResource( 24 )
+
+[node name="bubbles2" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 306.366, 529.585 )
+scale = Vector2( 0.271742, 0.271742 )
+z_index = -1
+texture = ExtResource( 24 )
+
+[node name="bubbles3" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 134.807, 358.609 )
+scale = Vector2( 0.290761, 0.290761 )
+texture = ExtResource( 24 )
+
+[node name="bubbles4" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 956.485, 515.912 )
+scale = Vector2( 0.436429, 0.436429 )
+z_index = -1
+texture = ExtResource( 24 )
+
+[node name="bubbles5" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 625.223, 493.704 )
+scale = Vector2( 0.387115, 0.387115 )
+texture = ExtResource( 24 )
+
+[node name="bubbles6" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 791.779, 401.173 )
+scale = Vector2( 0.217901, 0.217901 )
+texture = ExtResource( 24 )
+
+[node name="bubbles7" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 450.323, 658.285 )
+scale = Vector2( 0.217901, 0.217901 )
+texture = ExtResource( 24 )
+
+[node name="bubbles8" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 839.392, 632.438 )
+scale = Vector2( 0.217901, 0.217901 )
+texture = ExtResource( 24 )
+
+[node name="bubbles9" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 91.183, 614.753 )
+scale = Vector2( 0.217901, 0.217901 )
+texture = ExtResource( 24 )
+
+[node name="bubbles10" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 500.657, 326.352 )
+scale = Vector2( 0.217901, 0.217901 )
+texture = ExtResource( 24 )
+
+[node name="bubbles11" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 903.119, 299.22 )
+scale = Vector2( 0.217901, 0.217901 )
+texture = ExtResource( 24 )
+
+[node name="bubbles12" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 211.045, 648.069 )
+scale = Vector2( 0.299231, 0.299231 )
+texture = ExtResource( 24 )
+
+[node name="bubbles13" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 372.011, 702.866 )
+scale = Vector2( 0.451956, 0.451956 )
+texture = ExtResource( 24 )
+
+[node name="bubbles14" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 604.897, 634.37 )
+scale = Vector2( 0.277378, 0.277378 )
+texture = ExtResource( 24 )
+
+[node name="bubbles15" type="Sprite" parent="logo/bubbles_anim"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 796.686, 648.069 )
+scale = Vector2( 0.217901, 0.217901 )
+texture = ExtResource( 24 )
+
+[node name="bubble_anim_logo" type="AnimationPlayer" parent="logo/bubbles_anim"]
+anims/bubble_foam_modu = ExtResource( 25 )
+anims/bubble_logo = ExtResource( 23 )
+
+[node name="foam_party" type="Sprite" parent="logo"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 552.21, 1472.08 )
+scale = Vector2( 0.533788, 0.533788 )
+z_index = -1
+texture = ExtResource( 15 )
 [connection signal="animation_changed" from="logo/logo_player" to="logo" method="_on_logo_player_animation_changed"]
 [connection signal="animation_finished" from="logo/logo_player" to="logo" method="_on_logo_player_animation_finished"]

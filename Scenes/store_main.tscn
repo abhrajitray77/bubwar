@@ -194,7 +194,7 @@ texture = ExtResource( 14 )
 
 [node name="store_final" type="Sprite" parent="."]
 visible = false
-position = Vector2( 540.603, 887.498 )
+position = Vector2( 540.603, 888.69 )
 scale = Vector2( 1.06829, 1.26869 )
 z_index = 2
 texture = ExtResource( 12 )

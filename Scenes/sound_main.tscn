@@ -7,7 +7,7 @@
 [node name="sound_main" type="Node2D"]
 position = Vector2( 334.829, 588.538 )
 scale = Vector2( 1.539, 1.539 )
-z_index = 2
+z_index = 30
 script = ExtResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
