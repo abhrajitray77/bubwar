@@ -14,5 +14,6 @@ func _process(delta):
 		queue_free()
 
 func _on_speedBoost_body_entered(_body: KinematicBody2D):
-	node.speed = true
+	if node.lightning == false and node.shield == false:
+		node.speed = true
 	queue_free()

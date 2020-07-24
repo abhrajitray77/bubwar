@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Assets/sprites/powerups/shield final.png" type="Texture" id=1]
 [ext_resource path="res://Assets/sprites/powerups/health.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/sprites/UI/store/close.png" type="Texture" id=19]
 [ext_resource path="res://PAMPARAY Demo.otf" type="DynamicFontData" id=20]
 [ext_resource path="res://Assets/sprites/UI/store/buy_bg.png" type="Texture" id=21]
+[ext_resource path="res://Scripts/high_score.gd" type="Script" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -116,6 +117,11 @@ func _on_Tween_tween_completed(object, key):
 	$buy_bg.scale = Vector2(0.684, 0.485)
 "
 
+[sub_resource type="DynamicFont" id=26]
+size = 60
+use_filter = true
+font_data = ExtResource( 20 )
+
 [sub_resource type="AnimationNodeAnimation" id=12]
 animation = "store_bubble"
 
@@ -193,7 +199,6 @@ z_index = 1
 texture = ExtResource( 14 )
 
 [node name="store_final" type="Sprite" parent="."]
-visible = false
 position = Vector2( 540.603, 888.69 )
 scale = Vector2( 1.06829, 1.26869 )
 z_index = 2
@@ -413,6 +418,19 @@ scale = Vector2( 9.10106, 4.82387 )
 shape = SubResource( 10 )
 
 [node name="Tween" type="Tween" parent="store_final/powerups/health_pow"]
+
+[node name="high_score" type="Node2D" parent="store_final"]
+position = Vector2( -459.264, -679.407 )
+script = ExtResource( 22 )
+
+[node name="score_text" type="Label" parent="store_final/high_score"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 26 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureButton" type="TextureButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )

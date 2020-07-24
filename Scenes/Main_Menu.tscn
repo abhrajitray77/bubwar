@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Menu_Bg.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/enemySpawner.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Assets/sprites/UI/settings/settings_modu.tres" type="Animation" id=24]
 [ext_resource path="res://Scenes/store_main.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/sprites/UI/store/store_modu.tres" type="Animation" id=26]
+[ext_resource path="res://Scenes/system.tscn" type="PackedScene" id=27]
 
 [node name="Main_Menu" type="Node2D"]
 script = ExtResource( 7 )
@@ -118,4 +119,6 @@ position = Vector2( 32.1328, -36.5649 )
 
 [node name="settings_mod" type="AnimationPlayer" parent="Pause_menu/settings"]
 anims/settings_modu = ExtResource( 24 )
+
+[node name="system" parent="." instance=ExtResource( 27 )]
 [connection signal="animation_finished" from="const/const_anim" to="const/const_anim" method="_on_const_anim_animation_finished"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/sprites/UI/pause/pause button low res.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/music_main.tscn" type="PackedScene" id=2]
 [ext_resource path="res://buttons/InGameButtons.gd" type="Script" id=3]
 [ext_resource path="res://Assets/sprites/UI/pause/play button low res.png" type="Texture" id=4]
 [ext_resource path="res://PAMPARAY Demo.otf" type="DynamicFontData" id=5]
@@ -9,10 +10,7 @@
 [ext_resource path="res://buttons/Pause_anim_tree.gd" type="Script" id=8]
 [ext_resource path="res://Assets/sprites/UI/pause/Pause menu buttons bg.png" type="Texture" id=9]
 [ext_resource path="res://Assets/sprites/UI/pause/Pause menu bg red.png" type="Texture" id=10]
-[ext_resource path="res://Assets/sprites/UI/settings/set_sound.png" type="Texture" id=11]
-[ext_resource path="res://Assets/sprites/UI/settings/set_music_off.png" type="Texture" id=12]
-[ext_resource path="res://Assets/sprites/UI/settings/set_sound_off.png" type="Texture" id=13]
-[ext_resource path="res://Assets/sprites/UI/settings/set_music.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/sound_main.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,72 +20,24 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
-[sub_resource type="GDScript" id=4]
-script/source = "extends Node2D
-
-#var sound_off = false
-
-func _ready():
-	pass
-
-func _on_Tween_tween_completed(object, key):
-	self.scale = Vector2(0.816, 0.816)
-
-func _on_set_on_off_toggled(button_pressed):
-	if button_pressed == true:
-		$Tween.interpolate_property(self, \"scale\", 
-		Vector2(0.6,0.6), Vector2(0.816, 0.816), 0.2, 
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.start()
-	if button_pressed ==false:
-		$Tween.interpolate_property(self, \"scale\", 
-		Vector2(0.6,0.6), Vector2(0.816, 0.816), 0.2, 
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.start()
-"
-
-[sub_resource type="GDScript" id=5]
-script/source = "extends Node2D
-
-#var music_off = false
-
-func _ready():
-	pass
-
-func _on_Tween_tween_completed(object, key):
-	self.scale = Vector2(0.816, 0.816)
-
-func _on_set_on_off_toggled(button_pressed):
-	if button_pressed == true:
-		$Tween.interpolate_property(self, \"scale\", 
-		Vector2(0.6,0.6), Vector2(0.816, 0.816), 0.2, 
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.start()
-	if button_pressed ==false:
-		$Tween.interpolate_property(self, \"scale\", 
-		Vector2(0.6,0.6), Vector2(0.816, 0.816), 0.2, 
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.start()
-"
-
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "popup"
 
-[sub_resource type="AnimationNodeTimeScale" id=7]
+[sub_resource type="AnimationNodeTimeScale" id=5]
 
-[sub_resource type="AnimationNodeBlendTree" id=8]
+[sub_resource type="AnimationNodeBlendTree" id=6]
 graph_offset = Vector2( -326.308, 107.5 )
-nodes/Animation/node = SubResource( 6 )
+nodes/Animation/node = SubResource( 4 )
 nodes/Animation/position = Vector2( -160, 160 )
-nodes/TimeScale/node = SubResource( 7 )
+nodes/TimeScale/node = SubResource( 5 )
 nodes/TimeScale/position = Vector2( 40, 140 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachine" id=9]
-states/popup/node = SubResource( 8 )
+[sub_resource type="AnimationNodeStateMachine" id=7]
+states/popup/node = SubResource( 6 )
 states/popup/position = Vector2( 301, 70 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 
 [node name="InGameButtons" type="Node2D"]
 pause_mode = 2
@@ -154,48 +104,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="sound_main" type="Node2D" parent="Pause menu bg"]
-position = Vector2( 86.1414, -183.876 )
-scale = Vector2( 0.8162, 0.8162 )
-z_index = 2
-script = SubResource( 4 )
+[node name="music_main" parent="Pause menu bg" instance=ExtResource( 2 )]
+position = Vector2( -95.7807, -173.452 )
+scale = Vector2( 0.792131, 0.792131 )
 
-[node name="Tween" type="Tween" parent="Pause menu bg/sound_main"]
-
-[node name="set_on_off" type="TextureButton" parent="Pause menu bg/sound_main"]
-margin_left = -98.9618
-margin_top = -95.6741
-margin_right = 168.038
-margin_bottom = 171.326
-rect_scale = Vector2( 0.760495, 0.760495 )
-toggle_mode = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 13 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="music_main" type="Node2D" parent="Pause menu bg"]
-position = Vector2( -96.0647, -187.929 )
-scale = Vector2( 0.816, 0.816 )
-script = SubResource( 5 )
-
-[node name="Tween" type="Tween" parent="Pause menu bg/music_main"]
-
-[node name="set_on_off" type="TextureButton" parent="Pause menu bg/music_main"]
-margin_left = -98.9618
-margin_top = -95.6741
-margin_right = 168.038
-margin_bottom = 171.326
-rect_scale = Vector2( 0.760495, 0.760495 )
-toggle_mode = true
-texture_normal = ExtResource( 14 )
-texture_pressed = ExtResource( 12 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="sound_main" parent="Pause menu bg" instance=ExtResource( 11 )]
+position = Vector2( 95.0931, -170.695 )
+scale = Vector2( 0.79, 0.79 )
 
 [node name="Pause_main" type="Node2D" parent="."]
 position = Vector2( 100.422, 111.58 )
@@ -227,15 +142,11 @@ texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 pause_mode = 2
-tree_root = SubResource( 9 )
+tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 10 )
+parameters/playback = SubResource( 8 )
 parameters/popup/TimeScale/scale = 4.0
 script = ExtResource( 8 )
 [connection signal="released" from="Pause menu bg/main_menu_bg/menu" to="." method="_on_menu_released"]
 [connection signal="released" from="Pause menu bg/restart_bg/Restart" to="." method="_on_Restart_released"]
-[connection signal="tween_completed" from="Pause menu bg/sound_main/Tween" to="Pause menu bg/sound_main" method="_on_Tween_tween_completed"]
-[connection signal="toggled" from="Pause menu bg/sound_main/set_on_off" to="Pause menu bg/sound_main" method="_on_set_on_off_toggled"]
-[connection signal="tween_completed" from="Pause menu bg/music_main/Tween" to="Pause menu bg/music_main" method="_on_Tween_tween_completed"]
-[connection signal="toggled" from="Pause menu bg/music_main/set_on_off" to="Pause menu bg/music_main" method="_on_set_on_off_toggled"]
 [connection signal="toggled" from="Pause_main/Pause" to="." method="_on_Pause_toggled"]

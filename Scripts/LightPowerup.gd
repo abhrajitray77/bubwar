@@ -12,5 +12,6 @@ func _process(delta):
 		queue_free()
 
 func _on_Powerup_body_entered(_body: KinematicBody2D):
-	node2.lightning = true
+	if node2.speed == false and node2.shield == false:
+		node2.lightning = true
 	queue_free()

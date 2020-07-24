@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/sprites/menuBg/blue sky.png" type="Texture" id=1]
 [ext_resource path="res://PAMPARAY Demo.otf" type="DynamicFontData" id=2]
@@ -8,12 +8,15 @@
 [ext_resource path="res://Assets/sprites/UI/pause/Pause menu bg red.png" type="Texture" id=6]
 [ext_resource path="res://Assets/sprites/UI/pause/Pause menu bg.png" type="Texture" id=7]
 [ext_resource path="res://buttons/GameOver.gd" type="Script" id=8]
-
-
-
+[ext_resource path="res://Scripts/total_score.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="AnimationNodeAnimation" id=2]
@@ -43,19 +46,20 @@ script = ExtResource( 8 )
 [node name="Pause menu bg" type="Sprite" parent="."]
 pause_mode = 2
 position = Vector2( 534.933, 903.658 )
-scale = Vector2( 0.0534692, 0.0495512 )
+scale = Vector2( 1.61697, 1.49849 )
 z_index = 10
 texture = ExtResource( 6 )
 
 [node name="pause_blue" type="Sprite" parent="Pause menu bg"]
+visible = false
 texture = ExtResource( 7 )
 
 [node name="Restart" type="Button" parent="Pause menu bg"]
 pause_mode = 2
-margin_left = -172.35
-margin_top = 35.5236
-margin_right = 170.65
-margin_bottom = 146.523
+margin_left = -169.317
+margin_top = 6.06841
+margin_right = 173.683
+margin_bottom = 117.068
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "restart"
@@ -73,9 +77,9 @@ texture = ExtResource( 3 )
 [node name="Button" type="Button" parent="Pause menu bg"]
 pause_mode = 2
 margin_left = -172.35
-margin_top = -183.668
+margin_top = 146.883
 margin_right = 170.65
-margin_bottom = -72.6681
+margin_bottom = 257.883
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quit"
@@ -89,6 +93,19 @@ show_behind_parent = true
 position = Vector2( 175.982, 56.299 )
 scale = Vector2( 0.659782, 0.410182 )
 texture = ExtResource( 3 )
+
+[node name="total_score" type="Node2D" parent="Pause menu bg"]
+position = Vector2( -122.037, -210.191 )
+script = ExtResource( 9 )
+
+[node name="score_text" type="Label" parent="Pause menu bg/total_score"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2

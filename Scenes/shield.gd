@@ -15,5 +15,6 @@ func _process(delta):
 
 
 func _on_shield_body_entered(_body: KinematicBody2D):
-	node2.shield = true
+	if node2.lightning == false and node2.speed == false:
+		node2.shield = true
 	queue_free()

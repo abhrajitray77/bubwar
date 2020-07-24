@@ -1,6 +1,7 @@
 extends Node2D
 onready var node4 = get_node("/root/Main_Menu/Pause_menu/InGameButtons")
 onready var node2 = get_node("/root/Main_Menu/hud/Score")
+onready var node5 = get_node("/root/Main_Menu/system/simpleSave")
 onready var node3 = get_node("/root/Main_Menu/hud/healthBubble")
 onready var node = $AnimationTree
 var pause_check = false
@@ -24,8 +25,10 @@ func _process(_delta):
 			anim_played = true
 
 func _on_Button_pressed():
+	node5.save_score(node2.score_val)
 	get_tree().quit()
 
 func _on_Restart_pressed():
+	node5.save_score(node2.score_val)
 	get_tree().reload_current_scene()
 	Engine.time_scale = 1.0
