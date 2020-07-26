@@ -2,8 +2,8 @@ extends Node2D
 onready var node = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/main_bg")
 onready var score = get_node("Score_bar/score_tex")
 onready var timer = get_node("Timer")
-var score_val = 0 
-var prev_score_val = 0
+onready var score_val = 0 
+onready var prev_score_val = 0
 onready var font_size = $Score_bar/score_tex.get("custom_fonts/font")
 func _ready():
 	#score.text = int(score.text)

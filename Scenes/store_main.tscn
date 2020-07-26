@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Assets/sprites/powerups/shield final.png" type="Texture" id=1]
 [ext_resource path="res://Assets/sprites/powerups/health.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://PAMPARAY Demo.otf" type="DynamicFontData" id=20]
 [ext_resource path="res://Assets/sprites/UI/store/buy_bg.png" type="Texture" id=21]
 [ext_resource path="res://Scripts/high_score.gd" type="Script" id=22]
+[ext_resource path="res://Scripts/total_coins.gd" type="Script" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -117,75 +118,80 @@ func _on_Tween_tween_completed(object, key):
 	$buy_bg.scale = Vector2(0.684, 0.485)
 "
 
-[sub_resource type="DynamicFont" id=26]
+[sub_resource type="DynamicFont" id=12]
 size = 60
 use_filter = true
 font_data = ExtResource( 20 )
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="DynamicFont" id=13]
+size = 70
+use_filter = true
+font_data = ExtResource( 20 )
+
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "store_bubble"
 
-[sub_resource type="AnimationNodeTimeScale" id=13]
+[sub_resource type="AnimationNodeTimeScale" id=15]
 
-[sub_resource type="AnimationNodeBlendTree" id=14]
+[sub_resource type="AnimationNodeBlendTree" id=16]
 graph_offset = Vector2( -84, 1 )
-nodes/Animation/node = SubResource( 12 )
+nodes/Animation/node = SubResource( 14 )
 nodes/Animation/position = Vector2( 0, 80 )
-nodes/TimeScale/node = SubResource( 13 )
+nodes/TimeScale/node = SubResource( 15 )
 nodes/TimeScale/position = Vector2( 219, 110 )
 nodes/output/position = Vector2( 480, 80 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "store_bubble1"
 
-[sub_resource type="AnimationNodeTimeScale" id=16]
+[sub_resource type="AnimationNodeTimeScale" id=18]
 
-[sub_resource type="AnimationNodeBlendTree" id=17]
+[sub_resource type="AnimationNodeBlendTree" id=19]
 graph_offset = Vector2( 0, 54 )
-nodes/Animation/node = SubResource( 15 )
+nodes/Animation/node = SubResource( 17 )
 nodes/Animation/position = Vector2( 222, 98 )
-nodes/TimeScale/node = SubResource( 16 )
+nodes/TimeScale/node = SubResource( 18 )
 nodes/TimeScale/position = Vector2( 430, 129 )
 nodes/output/position = Vector2( 640, 100 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=20]
 animation = "store_anim3"
 
-[sub_resource type="AnimationNodeTimeScale" id=19]
+[sub_resource type="AnimationNodeTimeScale" id=21]
 
-[sub_resource type="AnimationNodeBlendTree" id=20]
-nodes/Animation/node = SubResource( 18 )
+[sub_resource type="AnimationNodeBlendTree" id=22]
+nodes/Animation/node = SubResource( 20 )
 nodes/Animation/position = Vector2( 137, 75 )
-nodes/TimeScale/node = SubResource( 19 )
+nodes/TimeScale/node = SubResource( 21 )
 nodes/TimeScale/position = Vector2( 360, 40 )
 nodes/output/position = Vector2( 600, 60 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=23]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=24]
-states/store_bubble/node = SubResource( 14 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=26]
+states/store_bubble/node = SubResource( 16 )
 states/store_bubble/position = Vector2( 229, 134 )
-states/store_bubble2/node = SubResource( 17 )
+states/store_bubble2/node = SubResource( 19 )
 states/store_bubble2/position = Vector2( 540, 94 )
-states/store_bubble3/node = SubResource( 20 )
+states/store_bubble3/node = SubResource( 22 )
 states/store_bubble3/position = Vector2( 731, 192 )
-transitions = [ "store_bubble", "store_bubble2", SubResource( 21 ), "store_bubble2", "store_bubble3", SubResource( 22 ), "store_bubble3", "store_bubble", SubResource( 23 ) ]
+transitions = [ "store_bubble", "store_bubble2", SubResource( 23 ), "store_bubble2", "store_bubble3", SubResource( 24 ), "store_bubble3", "store_bubble", SubResource( 25 ) ]
 graph_offset = Vector2( 85, 27 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=27]
 
 [node name="store_main" type="Node2D"]
 script = ExtResource( 13 )
@@ -426,7 +432,23 @@ script = ExtResource( 22 )
 [node name="score_text" type="Label" parent="store_final/high_score"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 26 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="total_coins" type="Node2D" parent="store_final"]
+position = Vector2( 254.518, -677.47 )
+script = ExtResource( 23 )
+
+[node name="cointex" type="Label" parent="store_final/total_coins"]
+margin_left = 90.0223
+margin_top = -0.919336
+margin_right = 130.022
+margin_bottom = 67.0807
+grow_horizontal = 0
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -481,9 +503,9 @@ anims/store_bubble = ExtResource( 6 )
 anims/store_bubble1 = ExtResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="TextureButton"]
-tree_root = SubResource( 24 )
+tree_root = SubResource( 26 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 25 )
+parameters/playback = SubResource( 27 )
 parameters/store_bubble/TimeScale/scale = 1.0
 parameters/store_bubble2/TimeScale/scale = 1.0
 parameters/store_bubble3/TimeScale/scale = 1.0

@@ -1,7 +1,7 @@
 extends Node2D
 onready var node = get_node("/root/Main_Menu/Player_stuff/PLayer/Player/main_bg")
-var coin_val = 0 
-var prev_score_val = 0
+onready var coin_val = 0 
+onready var prev_score_val = 0
 onready var font_size = $coin_bar/coin_tex.get("custom_fonts/font")
 var play_tween = false
 var tween_played = false
