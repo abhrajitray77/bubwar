@@ -10,4 +10,4 @@ func _ready():
 
 func _process(_delta):
 	if node4.store_on == true:
-		$score_text.text = str(node3.save_obj['highscore'])
+		$score_text.text = str(node3.save_obj['highscore'], "m")

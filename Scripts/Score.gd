@@ -6,10 +6,8 @@ onready var score_val = 0
 onready var prev_score_val = 0
 onready var font_size = $Score_bar/score_tex.get("custom_fonts/font")
 func _ready():
-	#score.text = int(score.text)
-	#$Score_bar/score_tex.get("custom_fonts/font").set_size(100)
-	#rint(font_size.size)
-	pass
+	font_size.set_size(154)
+
 func _process(_delta):
 	$Score_bar/score_tex.set_text(str(score_val, " m"))
 	if len(str(score_val)) - len(str(prev_score_val)):

@@ -16,8 +16,6 @@ func load_property():
 		f.open(property_file, File.READ)
 		save_obj = f.get_var()
 		f.close()
-	else:
-		save_obj = {}
 
 
 func save_property(save):
@@ -31,4 +29,12 @@ func save_property(save):
 	f.open(property_file, File.WRITE)
 	f.store_var(save_obj)
 	f.close()
+
+
+func reset_property():
+	var reset = {
+		"score": 0,
+		"coin": 0,
+	}
+	save_property(reset)
 

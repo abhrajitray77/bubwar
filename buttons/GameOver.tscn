@@ -46,6 +46,7 @@ script = ExtResource( 8 )
 
 [node name="Pause menu bg" type="Sprite" parent="."]
 pause_mode = 2
+visible = false
 position = Vector2( 534.933, 903.658 )
 scale = Vector2( 1.61697, 1.49849 )
 z_index = 10
